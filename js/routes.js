@@ -16,11 +16,11 @@ const myRoutes = [{
         component: aboutPage
     },
     {
-        path: '/miss-keep',
+        path: '/keep',
         component: missKeep
     },
     {
-        path: '/mister-email',
+        path: '/email',
         component: misterEmail
     },
     // {
