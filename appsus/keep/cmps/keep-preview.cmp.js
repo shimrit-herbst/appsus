@@ -9,10 +9,10 @@ export default {
     props: ['note'],
     template: `
         <section class="keep-preview">
-           <keep-txt :note="note" v-if="note.type = 'noteTxt'" />
-           <keep-img :note="note" v-if="note.type = 'noteImg'" />
-           <!-- <keep-todos :note="note" v-if="note.type= 'noteTodos'" />
-           <keep-video :note="note" v-if="note.type= 'noteVideo'" /> -->
+           <keep-txt :note="note" v-if="note.type === 'noteTxt'" />
+           <keep-img :note="note" v-if="note.type === 'noteImg'" />
+           <!-- <keep-todos :note="note" v-if="note.type === 'noteTodos'" /> -->
+           <!-- <keep-video :note="note" v-if="note.type === 'noteVideo'" /> -->
         </section>
     `,
     components: {

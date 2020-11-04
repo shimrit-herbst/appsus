@@ -20,7 +20,7 @@ export default {
         }
     },
     created() {
-        this.notes = keepService.getById();
+        this.notes = keepService.getNotes();
     },
     components: {
         keepList,
