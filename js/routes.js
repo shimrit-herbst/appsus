@@ -3,7 +3,7 @@ import appsusApp from './pages/appsus-app.cmp.js';
 import aboutPage from './pages/about-page.cmp.js';
 import missKeep from './pages/keep-app.cmp.js';
 import misterEmail from './pages/email-app.cmp.js';
-
+import emailDetails from '../appsus/email/pages/email-details.cmp.js'
 
 
 
@@ -16,13 +16,17 @@ const myRoutes = [{
         component: aboutPage
     },
     {
-        path: '/miss-keep',
+        path: '/keep',
         component: missKeep
     },
     {
-        path: '/mister-email',
+        path: '/email',
         component: misterEmail
     },
+    {
+        path: '/email/:emailId',
+        component: emailDetails
+    }
     // {
     //     path: '/book',
     //     component: bookApp

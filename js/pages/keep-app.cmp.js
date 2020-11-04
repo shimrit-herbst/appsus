@@ -1,7 +1,6 @@
 var notes = {
     title: 'MissKeep',
-    cmps: [
-        {
+    cmps: [{
             type: "NoteText",
             isPinned: true,
             info: {
@@ -51,7 +50,7 @@ const textBox = {
             this.$emit('setVal', this.txt)
         }
     }
-} 
+}
 
 
 
@@ -63,7 +62,7 @@ export default {
     template: `
     <section class="miss-keep">
         <h1>Miss Keep</h1>
-        <input type="text" v-model="titleTag" />
+        <!-- <input type="text" v-model="titleTag" />
         <component :is="titleTag">{{survey.title}}</component>
                 <form @submit.prevent="save">
             <div v-for="(cmp, idx) in survey.cmps">
@@ -75,31 +74,31 @@ export default {
             <button>Save</button>
         </form>
         <hr />
-        <pre>{{answers}}</pre>
+        <pre>{{answers}}</pre> -->
     </section>
     `,
     data() {
         return {
-            titleTag: 'h1',
-            survey: notes,
-            answers: new Array(notes.cmps.length)
+            // titleTag: 'h1',
+            // survey: notes,
+            // answers: new Array(notes.cmps.length)
         }
     },
-    methods: {
-        save() {
-            console.log('Saving: ', this.answers);
-        },
-        setAns(val, idx) {
-            this.answers.splice(idx, 1, val)
-        }
-    },
-    mounted() {
-    },
-    created() {
-    },
-    components: {
-        NoteText,
-        NoteImg,
-        NoteTodos
-    }
+    // methods: {
+    //     save() {
+    //         console.log('Saving: ', this.answers);
+    //     },
+    //     setAns(val, idx) {
+    //         this.answers.splice(idx, 1, val)
+    //     }
+    // },
+    // mounted() {
+    // },
+    // created() {
+    // },
+    // components: {
+    //     NoteText,
+    //     NoteImg,
+    //     NoteTodos
+    // }
 }
