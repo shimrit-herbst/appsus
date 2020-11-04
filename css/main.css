@@ -1,3 +1,23 @@
 /*imports!
 
-/* body, html 
+ /* body, html   */
+
+@import './apps/email/email-main.css';
+@import './home-page.css';
+@import './main-footer.css';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}

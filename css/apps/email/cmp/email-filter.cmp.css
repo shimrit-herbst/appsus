@@ -1,0 +1,6 @@
+.email-filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline-end: 20px;
+}

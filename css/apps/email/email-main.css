@@ -1,0 +1,31 @@
+@import './cmp/email-list.cmp.css';
+@import './cmp/email-preview.cmp.css';
+@import './cmp/email-filter.cmp.css';
+.mister-email .email-header {
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: 20px;
+}
+
+.mister-email .email-header input {
+    align-self: center;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    margin-inline-end: 100px;
+}
+
+.mister-email .compose-btn {
+    color: rgb(2, 3, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 20px;
+    outline: none;
+    transition: 0.2s;
+}

@@ -1,0 +1,15 @@
+.email-preview {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.email-preview span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    width: 300px;
+}
+
+.email-preview span:nth-child(2) {
+    flex-grow: 1;
+}

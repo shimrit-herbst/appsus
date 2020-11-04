@@ -9,7 +9,7 @@ const options = {
     template: `
         <section class="appsus">
             <appsus-header/>    
-            <main>
+            <main class="main-container">
                 <router-view></router-view>
             </main>
             
