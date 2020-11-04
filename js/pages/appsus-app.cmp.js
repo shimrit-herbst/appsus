@@ -9,7 +9,7 @@ export default {
     name: 'appsus-app',
     template: `
     <section class="appsus-app">
-        <h1>AppSus</h1>
+        <h2>APPSUS MAIN PAGE</h2>
     </section>
     `,
     components: {
