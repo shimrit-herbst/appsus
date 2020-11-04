@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var notes = {
     title: 'MissKeep',
     cmps: [{
@@ -55,11 +56,16 @@ const textBox = {
 
 
 
+=======
+import { keepService } from '../../appsus/keep/services/keep-service.js';
+import keepList from '../../appsus/keep/cmps/keep-list.cmp.js';
+>>>>>>> 51f895146d62780df6afb6bfcf9a7663f47efcca
 
 
 export default {
     name: 'miss-keep',
     template: `
+<<<<<<< HEAD
     <section class="miss-keep">
         <h1>Miss Keep</h1>
         <!-- <input type="text" v-model="titleTag" />
@@ -102,3 +108,26 @@ export default {
     //     NoteTodos
     // }
 }
+=======
+        <section class="miss-keep">
+            <keep-list :notes="notesToShow"/>
+        </section>
+`,
+    data() {
+        return {
+            notes: null,
+        }
+    },
+    computed: {
+        notesToShow() {
+            return this.notes;
+        }
+    },
+    created() {
+        this.notes = keepService.getById();
+    },
+    components: {
+        keepList,
+    }
+}
+>>>>>>> 51f895146d62780df6afb6bfcf9a7663f47efcca
