@@ -8,8 +8,7 @@ export default {
     template: `
         <section class="miss-keep">
         <header>
-            <keep-search /> 
-            <!-- TO DO search by - filter -->
+            <keep-search @filtered="setFilter"/> 
         </header>
             <keep-add />
             <keep-list :notes="notesToShow"/>
@@ -18,13 +17,33 @@ export default {
     data() {
         return {
             notes: null,
+            filterBy: null,
         }
     },
     computed: {
         notesToShow() {
-            return this.notes;
+            if(!this.filterBy) return this.notes;
+            const titleFilter = this.filterBy.byTitle.toLowerCase();
+            const filteredByTitle = this.notes.filter(note => {
+                return (
+                    note.info.title.toLowerCase().includes(titleFilter) 
+                )
+            })
+            const typeFilter = this.filterBy.byType;
+            if (typeFilter === '') return filteredByTitle;
+            const filteredByTitleAndType = filteredByTitle.filter(note => {
+                return (
+                    note.type === typeFilter
+                )
+            })
+            return filteredByTitleAndType;
         }
     },
+    methods:{
+        setFilter(filterBy) {
+            console.log(filterBy)
+            this.filterBy = filterBy;
+    }},
     created() {
         keepService.getNotes()
             .then(notes => this.notes = notes)

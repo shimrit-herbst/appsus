@@ -8,7 +8,7 @@ export default {
         <section class="keep-list">
             <ul>
                 <li v-for="note in notes" :key="note.id">
-                    <keep-preview :note="note" :class="BgColor" @remove="removeNote(note.id)" @changeBgcColor="changeBgcColor"/>
+                <keep-preview :note="note" :class="BgColor" @remove="removeNote(note.id)" @changeBgcColor="changeBgcColor"/>
                 </li>
             </ul>
         </section>
@@ -31,6 +31,6 @@ export default {
         }
     },
     components: {
-        keepPreview
+        keepPreview,
     }
 }

@@ -1,6 +1,6 @@
-import keepTxt from './keep-txt.cmp.js'
-import keepImg from './keep-img.cmp.js'
-import keepTodos from './keep-todos.cmp.js'
+import noteTxt from './keep-txt.cmp.js'
+import noteImg from './keep-img.cmp.js'
+import noteTodos from './keep-todos.cmp.js'
 // import keepVideo from './keep-video.cmp.js'
 
 
@@ -9,15 +9,13 @@ export default {
     props: ['note'],
     template: `
         <section class="keep-preview" :style="noteStyle">
-           <keep-txt :note="note" v-if="note.type === 'noteTxt'" />
-           <keep-img :note="note" v-if="note.type === 'noteImg'" />
-           <keep-todos :note="note" v-if="note.type === 'noteTodos'" />
-           <!-- <keep-video :note="note" v-if="note.type === 'noteVideo'" /> -->
-           <div class="keep-edit-icons">
-                <i class="fa fas fa-thumbtack"></i>
-                <i class="fa fas fa-check"></i>
-                <i class="fa fas fa-palette"></i>
-                <i @click="emitRemove(note.id)" class="fa fas fa-trash-alt"></i>
+        <component :is='note.type' :note="note"></component>    
+            <div class="keep-edit-icons">
+                <i title="Pin note" class="fa fas fa-thumbtack"></i>
+                <i title="Send note to email" class="fa fas fa-envelope"></i>
+                <i title="Change background color" class="fa fas fa-palette"></i>
+                <i title="Edit note" @click="emitEdit" class="fa fas fa-edit"></i>
+                <i title="Remove note" @click="emitRemove(note.id)" class="fa fas fa-trash-alt"></i>
             </div>
         </section>
     `,
@@ -32,14 +30,14 @@ export default {
         emitRemove(noteId){
         this.$emit('remove', noteId);        
     },
+        emitEdit(){
+        this.$emit('edit');        
+    },
     },
     components: {
-        keepTxt,
-        keepImg,
-        keepTodos,
+        noteTxt,
+        noteImg,
+        noteTodos,
         // keepVideo
     }
 }
-
-
-// :class="previewClass"
