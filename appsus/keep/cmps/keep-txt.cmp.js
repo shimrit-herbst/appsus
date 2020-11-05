@@ -5,7 +5,6 @@ export default {
     <section>
        <label>
             {{note.info.text}}
-            <!-- <input type="text" v-model="val" placeholder="Take a note..." @blur="reportVal" /> -->
         </label>
     </section>
     `,
