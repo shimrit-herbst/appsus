@@ -3,11 +3,10 @@ import { emailService } from "../services/email-service.js"
 
 
 export default {
-    // props: ['unreadMail'],
     template: `
     <section class="email-filter">
         <div>
-            <select v-model="filterBy.mailStatus" >
+            <select v-model="filterBy.status" >
                 <option>Read</option>
                 <option>Unread</option>
                 <option>All</option>
@@ -21,24 +20,35 @@ export default {
     data() {
         return {
             filterBy: {
-                txt: '',
-                mailStatus: 'All'
+                searchTxt: '',
+                status: 'All',
+                fromTo: 'inbox'
             },
             unreadEmailsCount: 0,
         }
     },
     methods: {
         onFilterMails(filter) {
-            // console.log(filter)
-            eventBus.$emit('filterMails', filter)
+            this.filterBy.fromTo = filter
+            eventBus.$emit('filterMails', this.filterBy)
+        }
+    },
+    computed: {
+        filterChange() {
+            return this.filterBy.status;
+        }
+    },
+    watch: {
+        filterChange() {
+            console.log('filter change', this.filterBy.status);
+            eventBus.$emit('filterMails', this.filterBy)
         }
     },
     created() {
         eventBus.$on('updateUnread', diff => {
-            console.log(diff, 'diff???');
             this.unreadEmailsCount += diff;
         })
-        emailService.countUnredEmails()
+        emailService.countUnreadEmails()
             .then(res => this.unreadEmailsCount = res)
-    }
+    },
 }

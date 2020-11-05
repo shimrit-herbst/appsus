@@ -2,6 +2,7 @@ import emailList from '../../appsus/email/cmps/email-list.cmp.js'
 import emailDetails from '../../appsus/email/pages/email-details.cmp.js'
 import { emailService } from '../../appsus/email/services/email-service.js'
 import emailFilter from '../../appsus/email/cmps/email-filter.cmp.js'
+import { eventBus } from '../services/event-bus-service.js'
 
 
 
@@ -35,7 +36,7 @@ export default {
     },
     methods: {
         onSearch() {
-            console.log('mail to show', this.searchTxt);
+            eventBus.$emit('searchMails', this.searchTxt);
         },
         showDetails() {
             this.isShowList = false;

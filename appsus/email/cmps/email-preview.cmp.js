@@ -15,7 +15,8 @@ export default {
     },
     computed: {
         emailBody() {
-            return this.email.body.substring(0, 20) + '...'
+            if (this.email.body.length > 20) return this.email.body.substring(0, 20) + '...'
+            return this.email.body
         },
         emailTime() {
             return emailService.getTimeToShow(this.email.sentAt)

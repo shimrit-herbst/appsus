@@ -91,10 +91,10 @@ function getEmailIdxById(emailId) {
 
 
 function markReadEmail(emailId) {
-    var isReadBefore = false;
     return getEmailIdxById(emailId)
         .then(emailIdx => {
-            isReadBefore = gEmails[emailIdx].isRead || gEmails[emailIdx].to === 'Me';
+            if (gEmails[emailIdx].to !== 'Me') return Promise.resolve(true);
+            var isReadBefore = gEmails[emailIdx].isRead;
             gEmails[emailIdx].isRead = true;
             utilService.saveToStorage(EMAILS_KEY, gEmails)
                 // console.log(gEmails[emailIdx].isRead, emailIdx, 'checking');
@@ -107,7 +107,7 @@ function sendMail(mail) {
     utilService.saveToStorage(EMAILS_KEY, gEmails)
 }
 
-function countUnredEmails() {
+function countUnreadEmails() {
     var counter = 0;
     gEmails.forEach(email => {
         if (!email.isRead && email.to === 'Me') counter++
@@ -127,6 +127,7 @@ function filterMails(filter) {
 
 
 //   **************         UTILS????
+
 function getTimeToShow(emailTime) {
     var dateToShow = new Date(emailTime)
     if (Date.now() - emailTime < DAY_IN_MS) {
@@ -177,7 +178,7 @@ export const emailService = {
     getEmails,
     getEmailById,
     markReadEmail,
-    countUnredEmails,
+    countUnreadEmails,
     filterMails,
     sendMail
 }

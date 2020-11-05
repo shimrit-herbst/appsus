@@ -8,8 +8,8 @@ export default {
     template: `
     <section v-if="email" class="email-details">
             <div class="short-details">
-                <h2>{{email.subject}}</h2>
-                <span>{{email.from}}</span>
+                <h2>Subject: {{email.subject}}</h2>
+                <span>From: {{email.from}}</span>
                 <span>{{emailTime}}</span>
                 <span><p>{{email.body}}</p></span>
                 <button @click="onReply">Replay</button>
@@ -32,9 +32,6 @@ export default {
         onReply() {
             console.log('replaying');
         }
-    },
-    components: {
-
     },
     created() {
         const emailId = this.$route.params.emailId
