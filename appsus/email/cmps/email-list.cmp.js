@@ -1,4 +1,4 @@
-import { appsusService } from '../../../js/services/appsus-service.js'
+import { emailService } from '../services/email-service.js'
 import emailPreview from './email-preview.cmp.js'
 import emailFilter from '../cmps/email-filter.cmp.js'
 
@@ -6,9 +6,9 @@ export default {
     props: ['emails'],
     template: `
     <section class="email-list">
-        <email-filter @filterMails="filterMails" :unreadMail="unreadEmailsCount"/>
+        <email-filter @filterMails="filterMail" :unreadMail="unreadEmailsCount"/>
         <ul class="email-list-container">
-            <li v-for="email in emails" :key="email.id" :class="{read: email.isRead}">
+            <li v-for="email in emailsToShow" :key="email.id" :class="{read: email.isRead}">
                 <label for="marked"></label>
                 <input type="checkbox" id="marked" v-model="email.isMarked">
                 <email-preview :email="email" @click.native ="selected(email.id)"/>
@@ -29,19 +29,27 @@ export default {
     },
     methods: {
         selected(emailId) {
-            appsusService.markReadEmail(emailId)
-            console.log(this.emails);
+            emailService.markReadEmail(emailId)
             this.$router.push('/email/' + emailId)
+        },
+        filterMail(filter) {
+            console.log('filtering', filter);
+            if (filter === 'all') {
+                console.log(this.emails);
+                this.emailsToShow = this.emails;
+                return;
+            }
+            emailService.filterMails(filter)
+                .then(emailsToShow => this.emailsToShow = emailsToShow)
         }
     },
     computed: {
-        filterMails(filter) {
-            console.log(filter);
-        }
+
     },
 
     created() {
-        appsusService.countUnredEmails()
+        emailService.countUnredEmails()
             .then(res => this.unreadEmailsCount = res)
+        this.emailsToShow = this.filterMail('inbox');
     }
 }

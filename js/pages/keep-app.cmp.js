@@ -25,8 +25,4 @@ export default {
     components: {
         keepList,
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 69bac8bdf1f4d8f3fc8ff66d0c4c2c9fd2bb2127

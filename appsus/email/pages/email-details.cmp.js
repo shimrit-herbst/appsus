@@ -1,4 +1,3 @@
-import { appsusService } from '../../../js/services/appsus-service.js';
 import { emailService } from '../services/email-service.js'
 
 
@@ -40,7 +39,7 @@ export default {
     created() {
         const emailId = this.$route.params.emailId
         if (emailId) {
-            appsusService.getEmailById(emailId)
+            emailService.getEmailById(emailId)
                 .then(email => {
                     console.log(email);
                     this.email = email

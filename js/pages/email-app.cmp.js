@@ -1,7 +1,6 @@
 import emailList from '../../appsus/email/cmps/email-list.cmp.js'
-
 import emailDetails from '../../appsus/email/pages/email-details.cmp.js'
-import { appsusService } from '../services/appsus-service.js'
+import { emailService } from '../../appsus/email/services/email-service.js'
 
 
 export default {
@@ -12,7 +11,7 @@ export default {
             <h1>Mister Email</h1>
             <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch">
         </header>
-        <button class="compose-btn">+ Compose</button>
+        <button class="compose-btn" @click="composeMail">+ Compose</button>
         <!-- {{searchTxt}}
         {{emails}} -->
         
@@ -38,8 +37,11 @@ export default {
         },
         showDetails(emailId) {
             this.isShowList = false;
-            appsusService.getEmailById(emailId)
+            emailService.getEmailById(emailId)
                 .then(email => this.emailToDisplay = email);
+        },
+        composeMail() {
+            this.$router.push('/email/compose')
         }
     },
     computed: {
@@ -48,7 +50,7 @@ export default {
         }
     },
     created() {
-        appsusService.getEmails()
+        emailService.getEmails()
             .then(emails => this.emails = emails)
     }
 }
