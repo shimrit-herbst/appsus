@@ -7,8 +7,8 @@ export default {
     template: `
         <section class="keep-list">
             <ul>
-                <li v-for="note in notes" :key="note.id" >
-                    <keep-preview :note="note" @delete="deleteNote(note.id)" @changeBgcColor="changeBgcColor"/>
+                <li v-for="note in notes" :key="note.id">
+                    <keep-preview :note="note" :class="BgColor" @delete="deleteNote(note.id)" @changeBgcColor="changeBgcColor"/>
                 </li>
             </ul>
         </section>
@@ -24,6 +24,12 @@ export default {
                     keepService.saveNote(note)
                 });
         },
+    },
+    computed: {
+        BgColor() {
+            console.log('changing color', this.note)
+
+        }
     },
     components: {
         keepPreview

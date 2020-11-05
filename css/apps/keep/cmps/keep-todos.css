@@ -1,0 +1,9 @@
+.keep-todos {
+    /* text-align: center;
+    word-wrap: break-word; */
+}
+
+.keep-todos ul {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,9 +1,12 @@
 .keep-list ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .keep-list li {
     list-style-type: none;
-    border: 1px solid black;
+    border-radius: 12px;
     margin: 5px;
+    /* width: fit-content; */
+    height: fit-content;
 }

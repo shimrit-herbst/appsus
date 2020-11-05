@@ -5,7 +5,7 @@ export default {
     template: `
     <section class="keep-add" v-if="note">
         <form @submit.prevent="saveNote">
-            <input type="text" :placeholder="textToShow" v-model="input" />
+            <input type="text" cols="40" rows="5" :placeholder="textToShow" v-model="input"/>
             <div class="icons">
                 <i class="fas fa-font" @click="setNoteType('noteTxt')"></i> 
                 <i class="far fa-image" @click="setNoteType('noteImg')"></i>
@@ -32,7 +32,7 @@ export default {
                 case 'noteImg':
                     return 'url';
                 case 'noteTodos':
-                    return 'items';
+                    return 'todos';
             }
         },
         saveNote() {

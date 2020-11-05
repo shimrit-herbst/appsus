@@ -10,15 +10,13 @@ var gNotes = [
         'Me playing Mi'
     ),
     _createNoteTodos(
-        'How was it:',
-        [
-            _createNoteTodosItem('Do that', null),
-            _createNoteTodosItem('Do this', 187111111),
-        ],
+        'Do that, Do this'
     )
 ]
 
 function getNotes() {
+    gNotes = utilService.loadFromStorage(STORAGE_KEY) ? utilService.loadFromStorage(STORAGE_KEY) : gNotes;
+    utilService.saveToStorage(STORAGE_KEY, gNotes);
     return Promise.resolve(gNotes);
 }
 
@@ -30,47 +28,54 @@ function getEmptyTextNote() {
     }
 }
 
-function _createNoteTxt(txt) {
+function _createNoteTxt(txt, title = 'My note') {
     return {
         id: utilService.createId(),
         type: 'noteTxt',
         info: {
-            txt: "Fullstack Me Baby!"
+            txt,
+            title,
+        },
+        style: {
+            backgroundColor: "#add8e6"
         },
         isPinned: true,
     }
 }
 
-function _createNoteImg(url, title) {
+function _createNoteImg(url, title = 'My image') {
     const noteImg = {
         id: utilService.createId(),
         type: "noteImg",
         info: {
-            url,
-            title
+            title,
+            url
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#f08080"
         },
         isPinned: true,
     }
     return noteImg;
 }
 
-function _createNoteTodosItem(txt, doneAt) {
-    return {
-        txt,
-        doneAt
-    };
-}
-
-function _createNoteTodos(label, items) {
+function _createNoteTodos(todos, title = 'My Todos') {
+    todos = todos.split(',').map(todoText => {
+        return {
+            txt: todoText,
+            isDone: false,
+            doneAt: null,
+        }
+    })
     const noteTodos = {
         id: utilService.createId(),
         type: "noteTodos",
         info: {
-            label,
-            todos: items,
+            title,
+            todos,
+        },
+        style: {
+            backgroundColor: "#ffb6c1"
         },
         isPinned: true
     }
@@ -78,14 +83,14 @@ function _createNoteTodos(label, items) {
 }
 
 function saveNote(note) {
-    console.log(gNotes);
     if (note.id) {
         const noteIdx = gNotes.findIndex(currNote => note.id === currNote.id);
         gNotes.splice(noteIdx, 1, note);
     } else {
-        note.id = utilService.createId();
+        if (note.type === 'noteTxt') note = _createNoteTxt(note.info.txt);
+        if (note.type === 'noteImg') note = _createNoteImg(note.info.url);
+        if (note.type === 'noteTodos') note = _createNoteTodos(note.info.todos);
         gNotes.unshift(note);
-        console.log(gNotes);
     }
     utilService.saveToStorage(STORAGE_KEY, gNotes);
     return note;
