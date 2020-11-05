@@ -1,5 +1,5 @@
 import emailList from '../../appsus/email/cmps/email-list.cmp.js'
-import emailFilter from '../../appsus/email/cmps/email-filter.cmp.js'
+
 import emailDetails from '../../appsus/email/pages/email-details.cmp.js'
 import { appsusService } from '../services/appsus-service.js'
 
@@ -8,19 +8,20 @@ export default {
     name: 'mister-email',
     template: `
     <section class="mister-email">
-        <h1>Mister Email</h1>
-        <button class="compose-btn">+</button>
-        <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch">
+        <header class="email-header">
+            <h1>Mister Email</h1>
+            <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch">
+        </header>
+        <button class="compose-btn">+ Compose</button>
         <!-- {{searchTxt}}
         {{emails}} -->
-        <email-filter/>
+        
         <email-list v-if="isShowList" :emails="emailsToShow" @onShowDetails="showDetails"/>
         <email-details :email="emailToDisplay"/>
     </section>
     `,
     components: {
         emailList,
-        emailFilter,
         emailDetails
     },
     data() {

@@ -4,10 +4,7 @@ export default {
     props: ['email'],
     template: `
     <section class="email-preview">
-        <label for="marked">{{email.isMarked}}</label>
-        <input type="checkbox" id="marked" v-model="email.isMarked">
-        <span>{{email.from}}</span>
-        <span> <h2>{{email.subject}}</h2> </span>
+        <span>{{email.subject}}</span>
         <span>{{emailBody}}</span>
         <span>{{emailTime}}</span>
     </section>

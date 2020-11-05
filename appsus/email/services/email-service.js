@@ -8,7 +8,7 @@ function getTimeToShow(emailTime) {
     } else if (Date.now() - emailTime < YEAR_IN_MS) {
         dateToShow = getMonthName(dateToShow.getMonth() + 1) + ' ' +
             dateToShow.getDay()
-    }
+    } else dateToShow = dateToShow.toLocaleDateString()
     return dateToShow
 }
 

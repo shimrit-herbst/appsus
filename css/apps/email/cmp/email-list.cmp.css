@@ -1,0 +1,27 @@
+.email-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-list-container {
+    flex-grow: 1;
+}
+
+.email-list-container li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.email-list-container li:nth-child(even) {
+    background-color: rgba(219, 219, 219, 0.514);
+}
+
+.email-list-container li span {
+    display: flex;
+    align-items: center;
+}
+
+.read {
+    opacity: 0.35;
+}

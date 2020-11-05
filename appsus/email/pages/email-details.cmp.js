@@ -1,5 +1,5 @@
-import { appsusService } from "../../../js/services/appsus-service.js";
-
+import { appsusService } from '../../../js/services/appsus-service.js';
+import { emailService } from '../services/email-service.js'
 
 
 
@@ -10,9 +10,12 @@ export default {
     <section v-if="email" class="email-details">
             <div class="short-details">
                 <h2>{{email.subject}}</h2>
-                <h3>hello</h3> 
+                <span>{{email.from}}</span>
+                <span>{{emailTime}}</span>
+                <span><p>{{email.body}}</p></span>
+                <button @click="onReply">Replay</button>
             </div>
-    </section>
+        </section>
 
     `,
     data() {
@@ -21,7 +24,15 @@ export default {
         }
     },
     computed: {
+        emailTime() {
+            return emailService.getTimeToShow(this.email.sentAt)
+        }
 
+    },
+    methods: {
+        onReply() {
+            console.log('replaying');
+        }
     },
     components: {
 
