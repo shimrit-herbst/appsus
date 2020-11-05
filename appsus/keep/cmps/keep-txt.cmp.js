@@ -2,10 +2,9 @@ export default {
     name: 'keep-txt',
     props: ['note'],
     template: `
-    <section>
-       <label>
-            {{note.info.txt}}
-        </label>
+    <section class="keep-txt">
+       <h3>{{note.info.title}}</h3>
+       <label>{{note.info.txt}}</label>
     </section>
     `,
     data() {

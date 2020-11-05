@@ -1,0 +1,4 @@
+.keep-todos ul {
+    display: flex;
+    flex-direction: column;
+}

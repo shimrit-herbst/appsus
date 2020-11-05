@@ -5,17 +5,13 @@ export default {
     template: `
     <section class="keep-add" v-if="note">
         <form @submit.prevent="saveNote">
-            <input type="text" :placeholder="textToShow" v-model="input" />
-            <div class="icons">
+            <input type="text" cols="40" rows="5" :placeholder="textToShow" v-model="input"/>
+            <div class="keep-type-icons">
                 <i class="fas fa-font" @click="setNoteType('noteTxt')"></i> 
                 <i class="far fa-image" @click="setNoteType('noteImg')"></i>
                 <i class="fas fa-tasks" @click="setNoteType('noteTodos')"></i>
-            <!-- <i class="fas fa-thumbtack"></i>
-            <i class="fas fa-check"></i>
-            <i class="fas fa-palette"></i>
-            <i class="fas fa-trash-alt"></i> -->
             </div>
-            <button >Save</button>
+            <button>Save</button>
         </form>
     </section>`,
     data() {
@@ -32,7 +28,7 @@ export default {
                 case 'noteImg':
                     return 'url';
                 case 'noteTodos':
-                    return 'items';
+                    return 'todos';
             }
         },
         saveNote() {
