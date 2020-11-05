@@ -1,0 +1,13 @@
+.keep-search {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+}
+
+.keep-search h3 {
+    margin: 0
+}
+
+.keep-search .title-search {
+    margin: 19px 0px;
+}

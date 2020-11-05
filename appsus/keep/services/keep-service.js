@@ -104,8 +104,8 @@ function removeNote(noteId) {
 
 }
 
-function getNoteById(id) {
-    const note = gNotes.find(note => note.id === id)
+function getNoteById(noteId) {
+    const note = gNotes.find(note => note.id === noteId)
     return Promise.resolve(note)
 }
 
