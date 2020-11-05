@@ -7,9 +7,6 @@ function loadFromStorage(key) {
     return JSON.parse(val)
 }
 
-
-
-
 function createId(length = 10) {
     var txt = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -18,16 +15,6 @@ function createId(length = 10) {
     }
     return txt;
 }
-
-function saveToStorage(key, val) {
-    localStorage.setItem(key, JSON.stringify(val));
-}
-
-function loadFromStorage(key) {
-    const val = localStorage.getItem(key);
-    return JSON.parse(val);
-}
-
 
 export const utilService = {
     createId,
