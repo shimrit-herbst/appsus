@@ -96,11 +96,11 @@ function saveNote(note) {
     return note;
 }
 
-function deleteNote(id) {
-    const noteIdx = gNotes.findIndex(currNote => note.id === currNote.id);
+function removeNote(noteId) {
+    const noteIdx = gNotes.findIndex(note => note.id === noteId);
     gNotes.splice(noteIdx, 1);
     utilService.saveToStorage(STORAGE_KEY, gNotes);
-    return Promise.resolve('Note was successfully deleted!')
+    return Promise.resolve();
 
 }
 
@@ -114,6 +114,6 @@ export const keepService = {
     getNotes,
     getNoteById,
     saveNote,
-    deleteNote,
+    removeNote,
     getEmptyTextNote
 }

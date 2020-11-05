@@ -4,10 +4,7 @@ export default {
     template: `
     <section class="keep-txt">
        <h3>{{note.info.title}}</h3>
-       <label>
-       {{note.info.txt}}
-       <!-- <textarea rows="5" cols="50">{{note.info.txt}}</textarea> -->
-        </label>
+       <label>{{note.info.txt}}</label>
     </section>
     `,
     data() {

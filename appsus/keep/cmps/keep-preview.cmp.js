@@ -13,15 +13,25 @@ export default {
            <keep-img :note="note" v-if="note.type === 'noteImg'" />
            <keep-todos :note="note" v-if="note.type === 'noteTodos'" />
            <!-- <keep-video :note="note" v-if="note.type === 'noteVideo'" /> -->
+           <div class="keep-edit-icons">
+                <i class="fa fas fa-thumbtack"></i>
+                <i class="fa fas fa-check"></i>
+                <i class="fa fas fa-palette"></i>
+                <i @click="emitRemove(note.id)" class="fa fas fa-trash-alt"></i>
+            </div>
         </section>
     `,
     computed: {
         noteStyle() {
-            console.log(this.note);
             return {
                 backgroundColor: this.note.style.backgroundColor
             }
         }
+    },
+    methods: {
+        emitRemove(noteId){
+        this.$emit('remove', noteId);        
+    },
     },
     components: {
         keepTxt,

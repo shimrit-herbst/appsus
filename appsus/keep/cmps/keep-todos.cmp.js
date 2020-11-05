@@ -6,9 +6,11 @@ export default {
         <h3>{{noteInfo.title}}</h3>
         <ul>
             <li v-for="todo in noteInfo.todos">
-            <input type="checkbox" v-model="todo.isDone"/>    
-            {{todo.txt}}
-            {{todo.doneAt}}
+                <label>
+                    <input type="checkbox" v-model="todo.isDone"/>    
+                    {{todo.txt}}
+                    {{todo.doneAt}}
+                </label>
             </li>
         </ul>
     </section>

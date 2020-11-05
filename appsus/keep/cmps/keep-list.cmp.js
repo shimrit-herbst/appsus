@@ -8,17 +8,18 @@ export default {
         <section class="keep-list">
             <ul>
                 <li v-for="note in notes" :key="note.id">
-                    <keep-preview :note="note" :class="BgColor" @delete="deleteNote(note.id)" @changeBgcColor="changeBgcColor"/>
+                    <keep-preview :note="note" :class="BgColor" @remove="removeNote(note.id)" @changeBgcColor="changeBgcColor"/>
                 </li>
             </ul>
         </section>
     `,
     methods: {
-        deleteNote(id) {
-            keepService.deleteNote(id);
+        removeNote(noteId) {
+            keepService.removeNote(noteId)
+                .then(()=> this.$emit('show-msg', 'Note was removed successfully!'))
         },
-        changeBgcColor(color, id) {
-            keepService.getNoteById(id)
+        changeBgcColor(color, noteId) {
+            keepService.getNoteById(noteId)
                 .then(note => {
                     note.style.backgroundcolor = color;
                     keepService.saveNote(note)
@@ -27,8 +28,6 @@ export default {
     },
     computed: {
         BgColor() {
-            console.log('changing color', this.note)
-
         }
     },
     components: {

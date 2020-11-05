@@ -4,3 +4,27 @@
     padding: 20px;
     border-radius: 12px;
 }
+
+.keep-preview .keep-edit-icons {
+    /* display: none; */
+    text-align: center;
+    margin: 15px;
+}
+
+.keep-preview .keep-edit-icons:hover {
+    display: block;
+}
+
+.keep-preview .keep-edit-icons .fa {
+    margin: 0 3px;
+}
+
+.keep-preview .keep-edit-icons .fa:hover {
+
+    box-shadow: 6px 1px 10px rgba(43, 19, 11, 0.74);
+}
+
+
+.keep-preview h3 {
+    text-align: center;
+}
