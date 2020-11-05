@@ -4,7 +4,7 @@ export default {
     template: `
     <section>
        <label>
-            {{note.info.text}}
+            {{note.info.txt}}
         </label>
     </section>
     `,

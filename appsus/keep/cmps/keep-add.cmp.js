@@ -38,8 +38,8 @@ export default {
         saveNote() {
             const propertyName = this.getPropertyName();
             this.note.info[propertyName] = this.input;
-            keepService.saveNote(this.note)
-            keepService.getEmptyTextNote()
+            keepService.saveNote(this.note);
+            this.note = keepService.getEmptyTextNote();
             this.input = '';
         },
         setNoteType(noteType) {

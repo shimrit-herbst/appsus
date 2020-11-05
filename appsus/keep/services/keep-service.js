@@ -30,12 +30,12 @@ function getEmptyTextNote() {
     }
 }
 
-function _createNoteTxt(text) {
+function _createNoteTxt(txt) {
     return {
         id: utilService.createId(),
         type: 'noteTxt',
         info: {
-            text: "Fullstack Me Baby!"
+            txt: "Fullstack Me Baby!"
         },
         isPinned: true,
     }
@@ -78,12 +78,14 @@ function _createNoteTodos(label, items) {
 }
 
 function saveNote(note) {
+    console.log(gNotes);
     if (note.id) {
         const noteIdx = gNotes.findIndex(currNote => note.id === currNote.id);
         gNotes.splice(noteIdx, 1, note);
     } else {
         note.id = utilService.createId();
         gNotes.unshift(note);
+        console.log(gNotes);
     }
     utilService.saveToStorage(STORAGE_KEY, gNotes);
     return note;
