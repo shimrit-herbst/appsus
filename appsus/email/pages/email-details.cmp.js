@@ -41,7 +41,6 @@ export default {
         if (emailId) {
             emailService.getEmailById(emailId)
                 .then(email => {
-                    console.log(email);
                     this.email = email
                 })
         }

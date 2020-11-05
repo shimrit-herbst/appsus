@@ -1,6 +1,8 @@
 import emailList from '../../appsus/email/cmps/email-list.cmp.js'
 import emailDetails from '../../appsus/email/pages/email-details.cmp.js'
 import { emailService } from '../../appsus/email/services/email-service.js'
+import emailFilter from '../../appsus/email/cmps/email-filter.cmp.js'
+
 
 
 export default {
@@ -11,46 +13,39 @@ export default {
             <h1>Mister Email</h1>
             <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch">
         </header>
-        <button class="compose-btn" @click="composeMail">+ Compose</button>
-        <!-- {{searchTxt}}
-        {{emails}} -->
-        
-        <email-list v-if="isShowList" :emails="emailsToShow" @onShowDetails="showDetails"/>
-        <email-details :email="emailToDisplay"/>
+
+        <button class="compose-btn" @click="composeMail" >+ Compose</button>
+
+        <div class="email-body">
+            <email-filter :unreadMail="unreadEmailsCount"/>
+            <router-view></router-view>
+        </div>
     </section>
     `,
     components: {
         emailList,
-        emailDetails
+        emailDetails,
+        emailFilter
     },
     data() {
         return {
-            emails: [],
+            unreadEmailsCount: 0,
             searchTxt: '',
-            isShowList: true,
-            emailToDisplay: null,
         }
     },
     methods: {
         onSearch() {
             console.log('mail to show', this.searchTxt);
         },
-        showDetails(emailId) {
+        showDetails() {
             this.isShowList = false;
-            emailService.getEmailById(emailId)
-                .then(email => this.emailToDisplay = email);
+            console.log('show details');
         },
         composeMail() {
             this.$router.push('/email/compose')
-        }
-    },
-    computed: {
-        emailsToShow() {
-            return this.emails;
-        }
+        },
     },
     created() {
-        emailService.getEmails()
-            .then(emails => this.emails = emails)
+
     }
 }

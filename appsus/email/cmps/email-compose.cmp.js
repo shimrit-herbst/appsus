@@ -1,5 +1,7 @@
 import { utilService } from "../../../js/services/util-service.js";
 import { emailService } from "../services/email-service.js";
+import { eventBus } from '../../../js/services/event-bus-service.js'
+
 
 export default {
     name: 'email-compose',
@@ -40,6 +42,7 @@ export default {
     },
     methods: {
         sendMail() {
+            if (this.mail.to === 'Me') eventBus.$emit('updateUnread', 1)
             this.mail.sentAt = Date.now();
             emailService.sendMail(this.mail);
             this.mail = this.newMail;

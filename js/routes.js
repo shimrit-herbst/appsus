@@ -5,6 +5,7 @@ import missKeep from './pages/keep-app.cmp.js';
 import misterEmail from './pages/email-app.cmp.js';
 import emailDetails from '../appsus/email/pages/email-details.cmp.js'
 import emailCompose from '../appsus/email/cmps/email-compose.cmp.js'
+import emailList from '../appsus/email/cmps/email-list.cmp.js'
 
 
 
@@ -22,16 +23,21 @@ const myRoutes = [{
     },
     {
         path: '/email',
-        component: misterEmail
+        component: misterEmail,
+        children: [{
+                path: '/',
+                component: emailList
+            },
+            {
+                path: 'compose',
+                component: emailCompose
+            },
+            {
+                path: ':emailId',
+                component: emailDetails
+            }
+        ]
     },
-    {
-        path: '/email/compose',
-        component: emailCompose
-    },
-    {
-        path: '/email/:emailId',
-        component: emailDetails
-    }
     // {
     //     path: '/book',
     //     component: bookApp

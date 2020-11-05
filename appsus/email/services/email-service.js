@@ -70,14 +70,18 @@ var gEmails = [{
     },
 ];
 
+loadEmails()
+
+function loadEmails() {
+    if (utilService.loadFromStorage(EMAILS_KEY)) gEmails = utilService.loadFromStorage(EMAILS_KEY);
+}
 
 function getEmails() {
-    if (utilService.loadFromStorage(EMAILS_KEY)) gEmails = utilService.loadFromStorage(EMAILS_KEY);
     return Promise.resolve(gEmails)
 }
 
 function getEmailById(emailId) {
-    console.log('emailId', emailId);
+    // console.log('emailId', emailId);
     return Promise.resolve(gEmails.find(email => email.id === emailId))
 }
 
@@ -87,11 +91,14 @@ function getEmailIdxById(emailId) {
 
 
 function markReadEmail(emailId) {
-    getEmailIdxById(emailId)
+    var isReadBefore = false;
+    return getEmailIdxById(emailId)
         .then(emailIdx => {
+            isReadBefore = gEmails[emailIdx].isRead || gEmails[emailIdx].to === 'Me';
             gEmails[emailIdx].isRead = true;
             utilService.saveToStorage(EMAILS_KEY, gEmails)
-            return Promise.resolve()
+                // console.log(gEmails[emailIdx].isRead, emailIdx, 'checking');
+            return Promise.resolve(isReadBefore)
         })
 }
 
@@ -103,9 +110,8 @@ function sendMail(mail) {
 function countUnredEmails() {
     var counter = 0;
     gEmails.forEach(email => {
-        // counter = email.isRead ? counter : counter++;
         if (!email.isRead && email.to === 'Me') counter++
-    });
+    })
     return Promise.resolve(counter)
 }
 
@@ -114,7 +120,6 @@ function filterMails(filter) {
     if (filter === 'inbox') {
         return Promise.resolve(gEmails.filter(email => email.to === checkKey))
     } else return Promise.resolve(gEmails.filter(email => email.from === checkKey))
-
 }
 
 
