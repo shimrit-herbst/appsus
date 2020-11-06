@@ -113,7 +113,7 @@ export default {
         eventBus.$on('showMarked', () => this.isInboxFilter = false)
         emailService.getSelectedCounter()
             .then(res => {
-                console.log(res, 'counter is');
+                // console.log(res, 'counter is');
                 this.selectedCounter = res;
                 this.isShowBtns = res > 0;
             })

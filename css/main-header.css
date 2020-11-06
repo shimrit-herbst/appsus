@@ -4,11 +4,10 @@
 }
 
 .appsus-app-header .main-nav-list {
-    height: 100%;
-}
-
-.appsus-app-header .screen {
-    height: 100%;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background-color: rgb(204, 198, 198);
 }
 
 .appsus-app-header .main-nav-list a {
@@ -24,7 +23,13 @@
     text-decoration: none;
     color: black;
     text-transform: uppercase;
+    padding: 20px;
 }
+
+.appsus-app-header .main-nav-list a:hover {
+    background-color: whitesmoke;
+}
+
 
 /* .main-nav-list li a:after {
     content: "";
@@ -39,18 +44,29 @@
 } */
 
 
+/* 
 body.menu-open .appsus-app-header .main-nav-list {
     z-index: 1;
     display: block;
     transform: translateX(0);
     transition: transform .8s;
-}
+} */
 
 body.menu-open .screen {
     display: block;
-    opacity: 0.7;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    height: 100vh;
+    width: 100%;
 }
 
-.appsus-app-header .hamburger-sign {
-    position: relative;
+.hamburger-sign {
+    font-size: 36px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

@@ -7,7 +7,6 @@
 @import './home-page.css';
 @import './main-footer.css';
 @import './main-header.css';
-
 * {
     box-sizing: border-box;
 }

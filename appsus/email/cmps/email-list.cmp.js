@@ -45,7 +45,7 @@ export default {
         onSelected(emailId) {
             emailService.markReadEmail(emailId)
                 .then(isReadBefore => {
-                    console.log(isReadBefore, 'checkingggg');
+                    // console.log(isReadBefore, 'checkingggg');
                     if (!isReadBefore) eventBus.$emit('updateUnread', -1)
                 })
             this.$router.push('/email/' + emailId)
@@ -87,7 +87,7 @@ export default {
             if (this.filterBy.status !== 'All') {
                 emailsToShow = emailsToShow.filter(email => (email.isRead && this.filterBy.status === 'Read') || (!email.isRead && this.filterBy.status === 'Unread'))
             }
-            console.log(this.filterBy.fromTo);
+            // console.log(this.filterBy.fromTo);
             if (this.filterBy.fromTo !== 'all') {
                 if (this.filterBy.fromTo === 'inbox') {
                     emailsToShow = emailsToShow.filter(email => email.to === 'Me@gmail.com')
