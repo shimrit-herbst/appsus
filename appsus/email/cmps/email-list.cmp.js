@@ -73,7 +73,7 @@ export default {
             emailService.markEmail(emailId);
         },
         isInbox(emailTo) {
-            return emailTo === 'Me'
+            return emailTo === 'Me@gmail.com'
         },
     },
     computed: {
@@ -90,8 +90,8 @@ export default {
             console.log(this.filterBy.fromTo);
             if (this.filterBy.fromTo !== 'all') {
                 if (this.filterBy.fromTo === 'inbox') {
-                    emailsToShow = emailsToShow.filter(email => email.to === 'Me')
-                } else emailsToShow = emailsToShow.filter(email => email.to !== 'Me')
+                    emailsToShow = emailsToShow.filter(email => email.to === 'Me@gmail.com')
+                } else emailsToShow = emailsToShow.filter(email => email.to !== 'Me@gmail.com')
             }
 
 

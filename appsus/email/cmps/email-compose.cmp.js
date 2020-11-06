@@ -9,13 +9,15 @@ export default {
     <section class="email-compose">
         <header>
             <h3>New Mail</h3>
-            <i @click="closeCompose" class="far fa-times-circle"></i>
+            <div>
+                <i @click="sendMail" class="fas fa-paper-plane"></i>
+                <i @click="closeCompose" class="far fa-times-circle"></i>
+            </div>
         </header>
         <main>
             <input type="email" v-model="email.to" placeholder="To"/>
             <input type="text" v-model="email.subject" placeholder="Subject"/>
             <textarea v-model="email.body" name="review" rows="15" cols="60"></textarea>
-            <i @click="sendMail" class="fas fa-paper-plane"></i>
         </main>
         
     </section>
@@ -24,21 +26,21 @@ export default {
         return {
             email: {
                 id: utilService.createId(),
-                to: '',
+                to: 'Me@gmail.com',
                 subject: '',
                 body: '',
                 isRead: false,
-                from: 'Me',
+                from: 'Me@gmail.com',
                 isMarked: false,
                 sentAt: null
             },
             newEmail: {
                 id: utilService.createId(),
-                to: '',
+                to: 'Me@gmail.com',
                 subject: '',
                 body: '',
                 isRead: false,
-                from: 'Me',
+                from: 'Me@gmail.com',
                 isMarked: false,
                 sentAt: null
             }
@@ -58,7 +60,7 @@ export default {
                 alert('cant send an empty email.')
                 return
             }
-            if (this.email.to === 'Me') eventBus.$emit('updateUnread', 1)
+            if (this.email.to === 'Me@gmail.com') eventBus.$emit('updateUnread', 1)
             this.email.sentAt = Date.now();
             emailService.sendMail(this.email);
             this.email = this.newEmail;

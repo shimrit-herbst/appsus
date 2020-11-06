@@ -8,34 +8,34 @@ const EMAILS_KEY = 'mail';
 
 var gEmails = [{
         id: utilService.createId(),
-        from: 'APPSUS COP',
-        to: 'Me',
-        subject: 'hellooooo Appsus',
-        body: 'Getting Started with a whole new App',
+        from: 'APPSUS-COP@gmail.com',
+        to: 'Me@gmail.com',
+        subject: 'Welcome to Appsus',
+        body: 'We are very hapy to see that you have joined us! With your new APPSUS app you can say goodbay to your Gmail and Notes because now you will have the best App for all of this!',
         isRead: false,
-        sentAt: Date.now(),
+        sentAt: Date.now() - 2.5 * YEAR_IN_MS,
         isMarked: true,
         isTrash: false,
         isSelected: false,
     },
     {
         id: utilService.createId(),
-        from: 'Me',
-        to: 'Coding Acadmi',
+        from: 'Me@gmail.com',
+        to: 'Coding-Acadmi@hotmail.com',
         subject: 'We gonna have a party!!!!!!',
-        body: 'Its an invetation to the biggest party ever! come and join us to....',
+        body: 'Its an invetation to the biggest party ever! Come and join us to our brand new App release. Do not forget to and early up we are saving couple of drinks for you!',
         isRead: false,
-        sentAt: Date.now() - 1003244522,
+        sentAt: Date.now() - DAY_IN_MS * 3,
         isMarked: false,
         isTrash: false,
         isSelected: false,
     },
     {
         id: utilService.createId(),
-        from: 'FaceBook',
-        to: 'Me',
-        subject: 'FACEBOOK remainder',
-        body: 'Its been sooooo long since we have heard from you....',
+        from: 'FaceBook@facebook.com',
+        to: 'Me@gmail.com',
+        subject: 'FaceBook remainder',
+        body: 'Its been sooooo long since we have heard from you. Come and see the latest posts of your best friends and family members. We also have a nice surpeise for you! Hope to see you soon.',
         isRead: false,
         sentAt: Date.now() - 2367821,
         isMarked: false,
@@ -44,10 +44,10 @@ var gEmails = [{
     },
     {
         id: utilService.createId(),
-        from: 'APPSUS COP',
-        to: 'Me',
-        subject: 'hellooooo Appsus',
-        body: 'Getting Started with a whole new App',
+        from: 'D_trump@americaGotCrazy.com',
+        to: 'Me@gmail.com',
+        subject: 'Big Disappointment',
+        body: 'After 4 years of messing with your lovely country, its time for me to say goodbay. you probably thinking what am i going to do now? well its none of your f%^#%$ business! But i can only tell you thats its involve with some programing and the college Coding Acadmi',
         isRead: false,
         sentAt: Date.now(),
         isMarked: true,
@@ -56,10 +56,10 @@ var gEmails = [{
     },
     {
         id: utilService.createId(),
-        from: 'Me',
-        to: 'Coding Acadmi',
-        subject: 'We gonna have a party!!!!!!',
-        body: 'Its an invetation to the biggest party ever! come and join us to....',
+        from: 'Me@gmail.com',
+        to: 'Arsenal@venger.loser',
+        subject: 'Finally!',
+        body: 'Its been so long for us waiting for the real change to come! Finally we can see it coming with a lot of changes and money invested on the wright places. We really hope to keep this way and maybe soon we wont be the losers everybody think we are! COME ON YOU GUNNERS!',
         isRead: false,
         sentAt: Date.now() - 221003244522,
         isMarked: false,
@@ -68,10 +68,10 @@ var gEmails = [{
     },
     {
         id: utilService.createId(),
-        from: 'FaceBook',
-        to: 'Me',
-        subject: 'FACEBOOK remainder',
-        body: 'Its been sooooo long since we have heard from you....',
+        from: 'Me@gmail.com',
+        to: 'FaceBook@facebook.com',
+        subject: 'STOP BUGGING ME!!!!!',
+        body: 'Its been sooooo long since I have heard from you and frankly its soooo nice! goodbye!',
         isRead: true,
         sentAt: Date.now() - 2367821,
         isMarked: true,
@@ -102,7 +102,7 @@ function getEmailIdxById(emailId) {
 function markReadEmail(emailId) {
     return getEmailIdxById(emailId)
         .then(emailIdx => {
-            if (gEmails[emailIdx].to !== 'Me') return Promise.resolve(true);
+            if (gEmails[emailIdx].to !== 'Me@gmail.com') return Promise.resolve(true);
             var isReadBefore = gEmails[emailIdx].isRead;
             gEmails[emailIdx].isRead = true;
             utilService.saveToStorage(EMAILS_KEY, gEmails)
@@ -119,20 +119,20 @@ function removeToTrash(emailId) {
     getEmailById(emailId)
         .then(email => {
             email.isTrash = true
-            saveToStorage(EMAILS_KEY, gEmails)
+            utilService.saveToStorage(EMAILS_KEY, gEmails)
         })
 }
 
 function countUnreadEmails() {
     var counter = 0;
     gEmails.forEach(email => {
-        if (!email.isRead && email.to === 'Me' && !email.isTrash) counter++
+        if (!email.isRead && email.to === 'Me@gmail.com' && !email.isTrash) counter++
     })
     return Promise.resolve(counter)
 }
 
 function filterMails(filter) {
-    var checkKey = 'Me';
+    var checkKey = 'Me@gmail.com';
     if (filter === 'inbox') {
         return Promise.resolve(gEmails.filter(email => email.to === checkKey))
     } else return Promise.resolve(gEmails.filter(email => email.from === checkKey))
@@ -160,7 +160,7 @@ function toggleSelected(emailId) {
 function markEmail(emailId) {
     getEmailById(emailId)
         .then(email => {
-            if (email.to !== 'Me') return
+            if (email.to !== 'Me@gmail.com') return
             email.isMarked = !email.isMarked
             utilService.saveToStorage(EMAILS_KEY, gEmails)
         })
@@ -204,7 +204,7 @@ function getSelectedCounter() {
 function toggleAllSelected(togggleTo, diff) {
     var counter = 0
     gEmails.forEach(email => {
-        if (email.isSelected !== togggleTo && email.to === 'Me') {
+        if (email.isSelected !== togggleTo && email.to === 'Me@gmail.com') {
             email.isSelected = togggleTo;
             counter += diff;
         }

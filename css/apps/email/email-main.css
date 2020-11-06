@@ -12,7 +12,6 @@
 
 .mister-email .email-header {
     display: flex;
-    /* justify-content: space-between;   */
     margin-block-end: 20px;
 }
 
@@ -24,7 +23,7 @@
     padding: 12px 30px 12px 30px;
     border-radius: 25px;
     outline: none;
-    margin-inline-start: 150px;
+    margin-inline-start: 100px;
     border: 1px solid rgba(60, 64, 67, 0.302);
 }
 
@@ -33,7 +32,6 @@
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
     border: none;
     outline: none;
-    margin-block-end: 30px;
     color: rgb(2, 3, 2);
     font-size: 16px;
     border-radius: 30px;

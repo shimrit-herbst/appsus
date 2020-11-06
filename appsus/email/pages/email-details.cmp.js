@@ -10,7 +10,10 @@ export default {
         <div class="short-details">
             <section class="mail-header">
                 <h2>{{email.subject}}</h2>
-                <i @click="closeDetails" class="far fa-times-circle"></i> 
+                <div>
+                    <i @click="onReply" class="fas fa-reply"></i>
+                    <i @click="closeDetails" class="far fa-times-circle"></i> 
+                </div>
             </section>
             <section class="subtitle-mail">
                 <span><span class="bold">From:</span> {{email.from}}</span>

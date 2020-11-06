@@ -11,11 +11,10 @@ export default {
     template: `
     <section class="mister-email">
         <header class="email-header">
-            <h1>Mister Email</h1>
+            <button class="compose-btn" @click="composeMail" >Compose</button>
             <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch" >
         </header>
 
-        <button class="compose-btn" @click="composeMail" >Compose</button>
         <div class="selectBtns">
 
             <template v-if="isInboxFilter">
