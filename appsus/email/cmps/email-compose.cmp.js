@@ -9,7 +9,7 @@ export default {
     <section class="email-compose">
         <header>
             <h3>New Mail</h3>
-            <i class="far fa-times-circle"></i>
+            <i @click="closeCompose" class="far fa-times-circle"></i>
         </header>
         <main>
             <input type="email" v-model="email.to" placeholder="To"/>
@@ -45,6 +45,9 @@ export default {
         }
     },
     methods: {
+        closeCompose() {
+            this.$router.push('/email')
+        },
         sendMail() {
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!re.test(this.email.to)) {

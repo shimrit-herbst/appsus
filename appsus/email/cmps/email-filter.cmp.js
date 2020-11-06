@@ -5,18 +5,24 @@ import { emailService } from "../services/email-service.js"
 export default {
     template: `
     <section class="email-filter">
-        <div>
+        <span @click="onFilterMails('inbox')"><i class="fas fa-inbox"></i> Inbox  ({{unreadEmailsCount}}) </span>
+        <!-- <span @click="onFilterMails('all')">All</span> -->
+        <span @click="onShowMarked"><i class="fa fas fa-star"></i>  Marked  </span>
+        <span @click="onShowTrash"><i class="fa fas fa-trash-alt"></i>  Trash  </span>
+        <span @click="onFilterMails('sent')"><i class="fas fa-paper-plane"></i>  Sent  </span>
+        <span @click="filterByStatus('Read')"><i class="fa fas fa-envelope-open"></i> Read</span>
+        <span @click="filterByStatus('Unread')"><i class="fa fas fa-envelope"></i> Unread</span>
+        <span @click="filterByStatus('All')">All</span>
+        
+                        
+        <!-- <div>
+
             <select v-model="filterBy.status" >
                 <option>Read</option>
                 <option>Unread</option>
                 <option>All</option>
             </select>
-        </div>
-        <span @click="onFilterMails('inbox')">Inbox  ({{unreadEmailsCount}}) <i class="fas fa-inbox"></i></span>
-        <!-- <span @click="onFilterMails('all')">All</span> -->
-        <span @click="onShowMarked">Marked  <i class="fa fas fa-star"></i></span>
-        <span @click="onShowTrash">Trash  <i class="fa fas fa-trash-alt"></i></span>
-        <span @click="onFilterMails('sent')">Sent  <i class="fas fa-paper-plane"></i></span>
+        </div> -->
     </section>
     `,
     data() {
@@ -30,6 +36,9 @@ export default {
         }
     },
     methods: {
+        filterByStatus(filter) {
+            this.filterBy.status = filter
+        },
         onShowMarked() {
             console.log('show marked');
             eventBus.$emit('showMarked')

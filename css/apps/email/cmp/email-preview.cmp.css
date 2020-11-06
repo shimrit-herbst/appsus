@@ -12,4 +12,5 @@
 
 .email-preview span:nth-child(2) {
     flex-grow: 1;
+    padding: 20px 0;
 }
