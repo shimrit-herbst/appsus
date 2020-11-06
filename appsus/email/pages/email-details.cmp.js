@@ -7,13 +7,17 @@ export default {
     name: 'email-details',
     template: `
     <section v-if="email" class="email-details">
-        <i class="far fa-times-circle"></i>
         <div class="short-details">
-            <h2>Subject: {{email.subject}}</h2>
-            <span>From: {{email.from}}</span>
-            <span>{{emailTime}}</span>
+            <section class="mail-header">
+                <h2>{{email.subject}}</h2>
+                <i @click="closeDetails" class="far fa-times-circle"></i> 
+            </section>
+            <section class="subtitle-mail">
+                <span><span class="bold">From:</span> {{email.from}}</span>
+                <span class="bold">{{emailTime}}</span>
+            </section>
             <span><p>{{email.body}}</p></span>
-            <button @click="onReply">Reply</button>
+            <i @click="onReply" class="fas fa-reply"></i>
         </div>
     </section>
 
@@ -30,6 +34,9 @@ export default {
 
     },
     methods: {
+        closeDetails() {
+            this.$router.push('/email')
+        },
         onReply() {
             console.log('replying');
             this.$router.push('/email/compose/' + this.email.id)

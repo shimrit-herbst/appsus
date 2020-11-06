@@ -12,7 +12,7 @@ export default {
     <section class="mister-email">
         <header class="email-header">
             <h1>Mister Email</h1>
-            <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch">
+            <input type="text" v-model="searchTxt" placeholder="Search" @input="onSearch" >
         </header>
 
         <button class="compose-btn" @click="composeMail" >Compose</button>

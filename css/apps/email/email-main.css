@@ -2,20 +2,29 @@
 @import './cmp/email-preview.cmp.css';
 @import './cmp/email-filter.cmp.css';
 @import './cmp/email-compose.cmp.css';
+@import './cmp/email-details.cmp.css';
+
+/* 
+
+
+
+*/
+
 .mister-email .email-header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between;   */
     margin-block-end: 20px;
 }
 
 .mister-email .email-header input {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
     font-family: Garamond;
     align-self: center;
     font-size: 18px;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 12px 30px 12px 30px;
+    border-radius: 25px;
     outline: none;
-    margin-inline-end: 300px;
+    margin-inline-start: 150px;
     border: 1px solid rgba(60, 64, 67, 0.302);
 }
 

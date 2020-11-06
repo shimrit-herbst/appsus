@@ -21,9 +21,7 @@ export default {
                 <email-preview :email="email" @click.native ="onSelected(email.id)" :class="{read: email.isRead}"/>
             </li>
         </ul>
-        <!-- <div class="router-email-child"> -->
             <router-view></router-view>
-        <!-- </div> -->
     </section>
     `,
     data() {
