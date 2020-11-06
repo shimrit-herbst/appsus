@@ -8,7 +8,10 @@ export default {
     name: 'appsus-app',
     template: `
     <section class="appsus-app">
-        <h2>APPSUS MAIN PAGE</h2>
+        <h2>APPSUS</h2>
+            <h3>Mister Email</h3>
+            <h3>Miss Keep</h3>
+            <h3>Miss Books</h3>
     </section>
     `,
     components: {
@@ -22,7 +25,7 @@ export default {
     },
     methods: {},
     computed: {},
-    created() {}
+    created() { }
 
 
 
