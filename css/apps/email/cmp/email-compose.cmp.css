@@ -26,7 +26,7 @@
 .email-compose input {
     padding: 10px;
     border: none;
-    font-family: roberto;
+    font-family: Garamond;
     font-size: 18px;
     outline: none;
 }
@@ -41,7 +41,7 @@
 }
 
 .email-compose textarea {
-    font-family: roberto;
+    font-family: Garamond;
     font-size: 16px;
     border: none;
     outline: none;
