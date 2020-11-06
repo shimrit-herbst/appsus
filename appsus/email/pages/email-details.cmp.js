@@ -7,14 +7,15 @@ export default {
     name: 'email-details',
     template: `
     <section v-if="email" class="email-details">
-            <div class="short-details">
-                <h2>Subject: {{email.subject}}</h2>
-                <span>From: {{email.from}}</span>
-                <span>{{emailTime}}</span>
-                <span><p>{{email.body}}</p></span>
-                <button @click="onReply">Reply</button>
-            </div>
-        </section>
+        <i class="far fa-times-circle"></i>
+        <div class="short-details">
+            <h2>Subject: {{email.subject}}</h2>
+            <span>From: {{email.from}}</span>
+            <span>{{emailTime}}</span>
+            <span><p>{{email.body}}</p></span>
+            <button @click="onReply">Reply</button>
+        </div>
+    </section>
 
     `,
     data() {
@@ -52,5 +53,4 @@ export default {
                 .then(email => this.email = email)
         }
     }
-
 }
