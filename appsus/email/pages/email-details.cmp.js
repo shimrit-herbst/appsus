@@ -12,7 +12,7 @@ export default {
                 <span>From: {{email.from}}</span>
                 <span>{{emailTime}}</span>
                 <span><p>{{email.body}}</p></span>
-                <button @click="onReply">Replay</button>
+                <button @click="onReply">Reply</button>
             </div>
         </section>
 
@@ -30,7 +30,10 @@ export default {
     },
     methods: {
         onReply() {
-            console.log('replaying');
+            console.log('replying');
+            this.$router.push('/email/compose/' + this.email.id)
+                // this.$router.push('/email/' + emailId)
+
         }
     },
     created() {

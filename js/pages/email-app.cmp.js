@@ -1,6 +1,5 @@
 import emailList from '../../appsus/email/cmps/email-list.cmp.js'
 import emailDetails from '../../appsus/email/pages/email-details.cmp.js'
-import { emailService } from '../../appsus/email/services/email-service.js'
 import emailFilter from '../../appsus/email/cmps/email-filter.cmp.js'
 import { eventBus } from '../services/event-bus-service.js'
 
@@ -17,6 +16,11 @@ export default {
 
         <button class="compose-btn" @click="composeMail" >+ Compose</button>
 
+        <div class="btns">
+            <button class="delete">Delete</button>
+            <button class="star">star</button>
+            <button class="read-unread">Read/Unread</button>
+        </div>
         <div class="email-body">
             <email-filter :unreadMail="unreadEmailsCount"/>
             <router-view></router-view>

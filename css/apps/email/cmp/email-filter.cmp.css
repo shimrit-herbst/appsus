@@ -1,6 +1,14 @@
 .email-filter {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     margin-inline-end: 20px;
+}
+
+.email-filter>* {
+    margin-block-start: 10px;
+    cursor: pointer;
+}
+
+.email-filter>*:hover {
+    background-color: lightgray;
 }

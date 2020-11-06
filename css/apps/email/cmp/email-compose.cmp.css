@@ -1,0 +1,11 @@
+.email-compose {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+    left: 20%;
+}
+
+.email-compose input {
+    padding: 10px;
+}

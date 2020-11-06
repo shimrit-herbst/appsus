@@ -1,6 +1,7 @@
 .email-list {
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 .email-list-container {
@@ -22,6 +23,22 @@
     align-items: center;
 }
 
+.list-fetures {
+    display: flex;
+}
+
+.list-fetures i {
+    margin-inline-start: 10px;
+}
+
+.list-fetures i:last-child {
+    margin-inline-end: 10px;
+}
+
 .read {
-    opacity: 0.35;
+    opacity: 0.5;
+}
+
+.gold {
+    color: gold;
 }

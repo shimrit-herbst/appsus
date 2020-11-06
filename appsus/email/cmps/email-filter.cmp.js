@@ -12,9 +12,11 @@ export default {
                 <option>All</option>
             </select>
         </div>
-        <button @click="onFilterMails('inbox')">Inbox  ({{unreadEmailsCount}})</button>
-        <button @click="onFilterMails('sent')">Sent</button>
-        <button @click="onFilterMails('all')">All</button>
+        <span @click="onFilterMails('inbox')">Inbox  ({{unreadEmailsCount}})</span>
+        <span @click="onFilterMails('sent')">Sent</span>
+        <span @click="onFilterMails('all')">All</span>
+        <span @click="onShowMarked"><i class="fa fas fa-star"></i></span>
+        <span @click="onShowTrash"><i class="fa fas fa-trash-alt"></i></span>
     </section>
     `,
     data() {
@@ -22,15 +24,22 @@ export default {
             filterBy: {
                 searchTxt: '',
                 status: 'All',
-                fromTo: 'inbox'
+                fromTo: 'inbox',
             },
             unreadEmailsCount: 0,
         }
     },
     methods: {
+        onShowMarked() {
+            console.log('show marked');
+            eventBus.$emit('showMarked')
+        },
         onFilterMails(filter) {
             this.filterBy.fromTo = filter
             eventBus.$emit('filterMails', this.filterBy)
+        },
+        onShowTrash() {
+            eventBus.$emit('showTrash')
         }
     },
     computed: {

@@ -14,7 +14,8 @@ var gEmails = [{
         body: 'Getting Started with a whole new App',
         isRead: false,
         sentAt: Date.now(),
-        isMarked: false
+        isMarked: true,
+        isTrash: false,
     },
     {
         id: utilService.createId(),
@@ -24,8 +25,8 @@ var gEmails = [{
         body: 'Its an invetation to the biggest party ever! come and join us to....',
         isRead: true,
         sentAt: Date.now() - 1003244522,
-        isMarked: false
-
+        isMarked: false,
+        isTrash: false,
     },
     {
         id: utilService.createId(),
@@ -35,7 +36,8 @@ var gEmails = [{
         body: 'Its been sooooo long since we have heard from you....',
         isRead: false,
         sentAt: Date.now() - 2367821,
-        isMarked: false
+        isMarked: false,
+        isTrash: false,
     },
     {
         id: utilService.createId(),
@@ -45,7 +47,9 @@ var gEmails = [{
         body: 'Getting Started with a whole new App',
         isRead: false,
         sentAt: Date.now(),
-        isMarked: false
+        isMarked: true,
+        isTrash: false,
+
     },
     {
         id: utilService.createId(),
@@ -55,7 +59,8 @@ var gEmails = [{
         body: 'Its an invetation to the biggest party ever! come and join us to....',
         isRead: false,
         sentAt: Date.now() - 221003244522,
-        isMarked: false
+        isMarked: false,
+        isTrash: false,
 
     },
     {
@@ -66,7 +71,9 @@ var gEmails = [{
         body: 'Its been sooooo long since we have heard from you....',
         isRead: true,
         sentAt: Date.now() - 2367821,
-        isMarked: false
+        isMarked: true,
+        isTrash: false,
+
     },
 ];
 
@@ -81,7 +88,6 @@ function getEmails() {
 }
 
 function getEmailById(emailId) {
-    // console.log('emailId', emailId);
     return Promise.resolve(gEmails.find(email => email.id === emailId))
 }
 
@@ -97,14 +103,20 @@ function markReadEmail(emailId) {
             var isReadBefore = gEmails[emailIdx].isRead;
             gEmails[emailIdx].isRead = true;
             utilService.saveToStorage(EMAILS_KEY, gEmails)
-                // console.log(gEmails[emailIdx].isRead, emailIdx, 'checking');
             return Promise.resolve(isReadBefore)
         })
 }
 
 function sendMail(mail) {
-    gEmails.push(mail)
+    gEmails.unshift(mail)
     utilService.saveToStorage(EMAILS_KEY, gEmails)
+}
+
+function removeToTrash(emailId) {
+    getEmailById(emailId)
+        .then(email => {
+            email.isTrash = true
+        })
 }
 
 function countUnreadEmails() {
@@ -121,6 +133,20 @@ function filterMails(filter) {
         return Promise.resolve(gEmails.filter(email => email.to === checkKey))
     } else return Promise.resolve(gEmails.filter(email => email.from === checkKey))
 }
+
+function toggleRead(emailId) {
+    getEmailById(emailId)
+        .then(email => email.isRead = !email.isRead)
+}
+
+function markEmail(emailId) {
+    getEmailById(emailId)
+        .then(email => {
+            if (email.to !== 'Me') return
+            email.isMarked = !email.isMarked
+        })
+}
+
 
 
 
@@ -180,5 +206,8 @@ export const emailService = {
     markReadEmail,
     countUnreadEmails,
     filterMails,
-    sendMail
+    sendMail,
+    removeToTrash,
+    toggleRead,
+    markEmail
 }
