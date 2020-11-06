@@ -3,6 +3,7 @@ import appsusApp from './pages/appsus-app.cmp.js';
 import aboutPage from './pages/about-page.cmp.js';
 import missKeep from './pages/keep-app.cmp.js';
 import misterEmail from './pages/email-app.cmp.js';
+// import keepEdit from '../appsus/keep/pages/keep-edit.cmp.js'
 import emailDetails from '../appsus/email/pages/email-details.cmp.js'
 import emailCompose from '../appsus/email/cmps/email-compose.cmp.js'
 import emailList from '../appsus/email/cmps/email-list.cmp.js'
@@ -21,6 +22,10 @@ const myRoutes = [{
         path: '/keep',
         component: missKeep
     },
+    // {
+    //     path: '/keep/edit/:keepId',
+    //     component: keepEdit
+    // },
     {
         path: '/email',
         component: misterEmail,

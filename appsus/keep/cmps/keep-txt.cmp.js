@@ -1,20 +1,15 @@
 export default {
     name: 'keep-txt',
-    props: ['note'],
+    props: ['note', 'isEditable'],
     template: `
     <section class="keep-txt">
-       <h3>{{note.info.title}}</h3>
-       <label>{{note.info.txt}}</label>
+        <div v-if="isEditable">
+            <input type="text" v-model="note.info.txt"/>
+        </div>
+        <div v-else>
+            <h3>{{note.info.title}}</h3>
+            <p>{{note.info.txt}}</p>
+        </div>
     </section>
     `,
-    data() {
-        return {
-            val: '',
-        }
-    },
-    methods: {
-        reportVal() {
-            this.$emit('setVal', this.val);
-        }
-    },
 }

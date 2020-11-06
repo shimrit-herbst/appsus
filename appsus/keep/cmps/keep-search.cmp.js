@@ -2,15 +2,19 @@ export default {
     template: `
     <section class="keep-search">
         <h3>Notes</h3>
-        <label>Search by note title:</label>
-        <input type="text" class="note-search" v-model="byTitle" placeholder="Search here..." @input="emitFilter">
-        <label>Search by type of note:</label>
-        <select v-model="byType" @change="emitFilter">
-            <option></option>         
-            <option>Text</option>
-            <option>Image</option>
-            <option>List</option>
-        </select>
+        <div class="title-search">
+            <label>Search by note title:</label>
+            <input type="text" class="note-search" v-model="byTitle" placeholder="Search here..." @input="emitFilter">
+        </div>
+        <div class="type-search">
+            <label>Search by type of note:</label>
+            <select v-model="byType" @change="emitFilter">
+                <option></option>         
+                <option>Text</option>
+                <option>Image</option>
+                <option>List</option>
+            </select>
+        </div>
     </section>
     `,
     data(){

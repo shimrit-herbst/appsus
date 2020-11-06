@@ -28,3 +28,7 @@
 .keep-preview h3 {
     text-align: center;
 }
+
+.keep-preview a{
+    text-decoration: none;
+}
