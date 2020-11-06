@@ -16,6 +16,7 @@ var gEmails = [{
         sentAt: Date.now(),
         isMarked: true,
         isTrash: false,
+        isSelected: false,
     },
     {
         id: utilService.createId(),
@@ -23,10 +24,11 @@ var gEmails = [{
         to: 'Coding Acadmi',
         subject: 'We gonna have a party!!!!!!',
         body: 'Its an invetation to the biggest party ever! come and join us to....',
-        isRead: true,
+        isRead: false,
         sentAt: Date.now() - 1003244522,
         isMarked: false,
         isTrash: false,
+        isSelected: false,
     },
     {
         id: utilService.createId(),
@@ -38,6 +40,7 @@ var gEmails = [{
         sentAt: Date.now() - 2367821,
         isMarked: false,
         isTrash: false,
+        isSelected: false,
     },
     {
         id: utilService.createId(),
@@ -49,7 +52,7 @@ var gEmails = [{
         sentAt: Date.now(),
         isMarked: true,
         isTrash: false,
-
+        isSelected: false,
     },
     {
         id: utilService.createId(),
@@ -61,7 +64,7 @@ var gEmails = [{
         sentAt: Date.now() - 221003244522,
         isMarked: false,
         isTrash: false,
-
+        isSelected: false,
     },
     {
         id: utilService.createId(),
@@ -73,7 +76,7 @@ var gEmails = [{
         sentAt: Date.now() - 2367821,
         isMarked: true,
         isTrash: false,
-
+        isSelected: false,
     },
 ];
 
@@ -116,13 +119,14 @@ function removeToTrash(emailId) {
     getEmailById(emailId)
         .then(email => {
             email.isTrash = true
+            saveToStorage(EMAILS_KEY, gEmails)
         })
 }
 
 function countUnreadEmails() {
     var counter = 0;
     gEmails.forEach(email => {
-        if (!email.isRead && email.to === 'Me') counter++
+        if (!email.isRead && email.to === 'Me' && !email.isTrash) counter++
     })
     return Promise.resolve(counter)
 }
@@ -136,17 +140,77 @@ function filterMails(filter) {
 
 function toggleRead(emailId) {
     getEmailById(emailId)
-        .then(email => email.isRead = !email.isRead)
+        .then(email => {
+            email.isRead = !email.isRead
+            utilService.saveToStorage(EMAILS_KEY, gEmails)
+        })
+
 }
+
+function toggleSelected(emailId) {
+    return Promise.resolve(getEmailById(emailId)
+        .then(email => {
+            email.isSelected = !email.isSelected
+            if (email.isSelected) return 1
+            return -1
+        }))
+}
+
 
 function markEmail(emailId) {
     getEmailById(emailId)
         .then(email => {
             if (email.to !== 'Me') return
             email.isMarked = !email.isMarked
+            utilService.saveToStorage(EMAILS_KEY, gEmails)
         })
 }
 
+function toggleAllRead(istoggleToUnread) {
+    gEmails.forEach(email => {
+        if (email.isSelected) {
+            email.isRead = istoggleToUnread;
+        }
+    });
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
+}
+
+function toggleAllMarked(isToggleToStar) {
+    gEmails.forEach(email => {
+        if (email.isSelected) {
+            email.isMarked = isToggleToStar;
+        }
+    });
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
+}
+
+function removeAllToTrash() {
+    gEmails.forEach(email => {
+        if (email.isSelected) email.isTrash = true;
+    });
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
+    return Promise.resolve()
+}
+
+
+function getSelectedCounter() {
+    var counter = 0;
+    gEmails.forEach(email => {
+        if (email.isSelected) counter++
+    })
+    return Promise.resolve(counter)
+}
+
+function toggleAllSelected(togggleTo, diff) {
+    var counter = 0
+    gEmails.forEach(email => {
+        if (email.isSelected !== togggleTo && email.to === 'Me') {
+            email.isSelected = togggleTo;
+            counter += diff;
+        }
+    });
+    return Promise.resolve(counter);
+}
 
 
 
@@ -209,5 +273,11 @@ export const emailService = {
     sendMail,
     removeToTrash,
     toggleRead,
-    markEmail
+    markEmail,
+    toggleSelected,
+    toggleAllRead,
+    getSelectedCounter,
+    toggleAllMarked,
+    removeAllToTrash,
+    toggleAllSelected
 }

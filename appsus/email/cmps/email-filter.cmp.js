@@ -12,11 +12,11 @@ export default {
                 <option>All</option>
             </select>
         </div>
-        <span @click="onFilterMails('inbox')">Inbox  ({{unreadEmailsCount}})</span>
-        <span @click="onFilterMails('sent')">Sent</span>
-        <span @click="onFilterMails('all')">All</span>
-        <span @click="onShowMarked"><i class="fa fas fa-star"></i></span>
-        <span @click="onShowTrash"><i class="fa fas fa-trash-alt"></i></span>
+        <span @click="onFilterMails('inbox')">Inbox  ({{unreadEmailsCount}}) <i class="fas fa-inbox"></i></span>
+        <!-- <span @click="onFilterMails('all')">All</span> -->
+        <span @click="onShowMarked">Marked  <i class="fa fas fa-star"></i></span>
+        <span @click="onShowTrash">Trash  <i class="fa fas fa-trash-alt"></i></span>
+        <span @click="onFilterMails('sent')">Sent  <i class="fas fa-paper-plane"></i></span>
     </section>
     `,
     data() {
@@ -40,6 +40,11 @@ export default {
         },
         onShowTrash() {
             eventBus.$emit('showTrash')
+        },
+        updateCounter() {
+            console.log('updationg');
+            emailService.countUnreadEmails()
+                .then(res => this.unreadEmailsCount = res)
         }
     },
     computed: {
@@ -59,5 +64,7 @@ export default {
         })
         emailService.countUnreadEmails()
             .then(res => this.unreadEmailsCount = res)
+        eventBus.$on('updateUnreadCounter', () => this.updateCounter())
+
     },
 }

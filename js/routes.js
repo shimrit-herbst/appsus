@@ -26,25 +26,25 @@ const myRoutes = [{
     //     path: '/keep/edit/:keepId',
     //     component: keepEdit
     // },
+    ,
     {
+
         path: '/email',
         component: misterEmail,
         children: [{
                 path: '/',
-                component: emailList
+                component: emailList,
+                children: [{
+                        path: 'compose/:emailId?',
+                        component: emailCompose
+                    },
+                    {
+                        path: ':emailId',
+                        component: emailDetails
+                    }
+                ]
             },
-            {
-                path: 'compose',
-                component: emailCompose
-            },
-            {
-                path: 'compose/:emailId',
-                component: emailCompose
-            },
-            {
-                path: ':emailId',
-                component: emailDetails
-            }
+
         ]
     },
     // {

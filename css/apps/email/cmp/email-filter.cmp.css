@@ -4,11 +4,22 @@
     margin-inline-end: 20px;
 }
 
-.email-filter>* {
-    margin-block-start: 10px;
+.email-filter>*:not(:first-child) {
     cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid rgba(60, 64, 67, 0.302);
 }
 
-.email-filter>*:hover {
+.email-filter>*:not(:first-child):hover {
     background-color: lightgray;
+}
+
+.email-filter>:first-child {
+    margin-block-end: 10px;
+}
+
+.email-filter select {
+    padding: 6px;
+    font-family: robrerto;
+    border-radius: 10px;
 }

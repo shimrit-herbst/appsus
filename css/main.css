@@ -1,12 +1,17 @@
 @import '../css/apps/keep/keep-main.css';
 
- /* body, html   */
+/* body, html   */
 
+@import './fonts.css';
 @import './apps/email/email-main.css';
 @import './home-page.css';
 @import './main-footer.css';
 * {
     box-sizing: border-box;
+}
+
+html {
+    font-family: roberto;
 }
 
 body {
