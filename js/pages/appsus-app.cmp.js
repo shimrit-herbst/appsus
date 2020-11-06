@@ -36,7 +36,7 @@ export default {
                         <path class="st0" d="M0 10.133l75.278 20.294L77.385 0z"></path>
                     </svg>
                 </li>
-                <li class="green">
+                <li class="green-triangle">
                     <svg class="svg-shape-5" xmlns="http://www.w3.org/2000/svg" width="29.087" height="26.609" viewBox="0 0 29.087 26.609" style="visibility: inherit; opacity: 1; transform: matrix(0.74313, 0.66913, -0.66913, 0.74313, 0, 0);">
                         <path class="st0" d="M7.383 0L0 26.61l29.087-9.177z"></path>
                     </svg>

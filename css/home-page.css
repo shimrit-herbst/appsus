@@ -51,45 +51,113 @@ svg[class*=svg-shape-] {
     animation-timing-function: linear;
 }
 
-.red-t
+.red-triangle {
+    position: relative;
+    display: block;
+    left: -258px;
+    top: 144px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
 
-.svg-shape-1 {
+.red-triangle .svg-shape-1 {
     top: 110px;
     left: 370px;
     fill: #ff7e8b;
 }
 
-.svg-shape-2 {
+.leaf {
+    position: absolute;
+    display: block;
+    left: 1216px;
+    top: 400px;
+    transform: translate3d(-13.344px, 11.208px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.leaf .svg-shape-2 {
     bottom: 430px;
     right: 5%;
     fill: #3fc;
 }
 
-.svg-shape-3 {
+.yellow-triangle {
+    position: absolute;
+    display: block;
+    left: 82px;
+    top: 400px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.yellow-triangle .svg-shape-3 {
     top: 400px;
     left: 10%;
     fill: #ff0;
 }
 
-.svg-shape-4 {
+.turquoise-triangle {
+    position: absolute;
+    display: block;
+    left: 870px;
+    top: 698px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.turquoise-triangle .svg-shape-4 {
     bottom: 17%;
     right: 20%;
     fill: #6ff;
 }
 
-.svg-shape-5 {
+.green-triangle {
+    position: absolute;
+    display: block;
+    left: 1022px;
+    top: 152px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.green-triangle .svg-shape-5 {
     top: 100px;
     right: 20%;
     fill: #6f0;
 }
 
-.svg-shape-6 {
+.dot {
+    position: absolute;
+    display: block;
+    left: 943px;
+    top: 238px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.dot .svg-shape-6 {
     top: 25%;
     right: 30%;
     fill: #fc3;
 }
 
-.svg-shape-7 {
+.small-triangle {
+    position: absolute;
+    display: block;
+    left: 369px;
+    top: 635px;
+    transform: translate3d(-16.68px, 14.01px, 0px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.small-triangle .svg-shape-7 {
     bottom: 10%;
     left: 20%;
     fill: none;

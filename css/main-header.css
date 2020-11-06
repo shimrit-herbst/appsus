@@ -1,0 +1,56 @@
+.appsus-app-header .main-nav .nav-img {
+    position: relative;
+    text-align: center;
+}
+
+.appsus-app-header .main-nav-list {
+    height: 100%;
+}
+
+.appsus-app-header .screen {
+    height: 100%;
+}
+
+.appsus-app-header .main-nav-list a {
+    font-family: Garamond;
+    font-size: 3.5rem;
+    margin: auto;
+    height: 8.1875rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+/* .main-nav-list li a:after {
+    content: "";
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 4px;
+    background-color: #000;
+    transition: all .125s ease-in-out;
+} */
+
+
+body.menu-open .appsus-app-header .main-nav-list {
+    z-index: 1;
+    display: block;
+    transform: translateX(0);
+    transition: transform .8s;
+}
+
+body.menu-open .screen {
+    display: block;
+    opacity: 0.7;
+}
+
+.appsus-app-header .hamburger-sign {
+    position: relative;
+}

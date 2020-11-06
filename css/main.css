@@ -6,6 +6,8 @@
 @import './apps/email/email-main.css';
 @import './home-page.css';
 @import './main-footer.css';
+@import './main-header.css';
+
 * {
     box-sizing: border-box;
 }
