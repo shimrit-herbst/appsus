@@ -1,7 +1,7 @@
 import { keepService } from '../../appsus/keep/services/keep-service.js';
 import keepList from '../../appsus/keep/cmps/keep-list.cmp.js';
 import keepSearch from '../../appsus/keep/cmps/keep-search.cmp.js'
-import keepAdd from  '../../appsus/keep/cmps/keep-add.cmp.js'
+import keepAdd from '../../appsus/keep/cmps/keep-add.cmp.js'
 
 export default {
     name: 'miss-keep',
@@ -22,11 +22,11 @@ export default {
     },
     computed: {
         notesToShow() {
-            if(!this.filterBy) return this.notes;
+            if (!this.filterBy) return this.notes;
             const titleFilter = this.filterBy.byTitle.toLowerCase();
             const filteredByTitle = this.notes.filter(note => {
                 return (
-                    note.info.title.toLowerCase().includes(titleFilter) 
+                    note.info.title.toLowerCase().includes(titleFilter)
                 )
             })
             const typeFilter = this.filterBy.byType;
@@ -39,11 +39,12 @@ export default {
             return filteredByTitleAndType;
         }
     },
-    methods:{
+    methods: {
         setFilter(filterBy) {
             console.log(filterBy)
             this.filterBy = filterBy;
-    }},
+        }
+    },
     created() {
         keepService.getNotes()
             .then(notes => this.notes = notes)

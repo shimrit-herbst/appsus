@@ -7,3 +7,12 @@
 .appsus .main-container {
     flex-grow: 1;
 }
+
+.appsus-app {
+    text-align: center;
+}
+
+.appsus-app h3 {
+    display: inline-block;
+    margin: 0 10px;
+}
