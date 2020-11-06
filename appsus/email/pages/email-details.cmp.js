@@ -45,5 +45,12 @@ export default {
                 })
         }
 
+    },
+    watch: {
+        '$route.params.emailId' (newEmailId) {
+            emailService.getEmailById(newEmailId)
+                .then(email => this.email = email)
+        }
     }
+
 }

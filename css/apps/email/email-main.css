@@ -14,28 +14,58 @@
     padding: 10px;
     border-radius: 15px;
     outline: none;
-    margin-inline-end: 100px;
+    margin-inline-end: 300px;
+    border: 1px solid rgba(60, 64, 67, 0.302);
 }
 
 .mister-email .compose-btn {
+    text-align: center;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    border: none;
+    outline: none;
     margin-block-end: 30px;
     color: rgb(2, 3, 2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 30px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 30px;
-    padding: 20px;
+    padding: 12px 30px 12px 30px;
     outline: none;
     transition: 0.2s;
+    font-family: roberto;
 }
 
 .mister-email .compose-btn:hover {
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302), 0 4px 8px 3px rgba(60, 64, 67, 0.149);
+}
+
+.mister-email .selectBtns {
+    margin-block-end: 15px;
+    margin-inline-start: 120px;
+}
+
+.mister-email .selectBtns i {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.mister-email .selectBtns i:hover {
+    background-color: lightgrey;
 }
 
 .email-body {
     display: flex;
+}
+
+.gold {
+    color: gold;
+}
+
+.router-email-child {
+    position: relative;
+    top: -200px;
+    left: 350px;
+    max-width: 500px;
+    min-height: 500px;
+    background: whitesmoke;
 }

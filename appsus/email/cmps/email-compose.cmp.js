@@ -7,12 +7,16 @@ export default {
     name: 'email-compose',
     template: `
     <section class="email-compose">
-        <input type="email" v-model="email.to" placeholder="To"/>
-        <!-- <hr/> -->
-        <input type="text" v-model="email.subject" placeholder="Subject"/>
-        <!-- <hr/> -->
-        <textarea v-model="email.body" name="review" rows="20" cols="40"></textarea>
-        <button @click="sendMail">Send</button>
+        <header>
+            <h3>New Mail</h3>
+            <i class="far fa-times-circle"></i>
+        </header>
+        <main>
+            <input type="email" v-model="email.to" placeholder="To"/>
+            <input type="text" v-model="email.subject" placeholder="Subject"/>
+            <textarea v-model="email.body" name="review" rows="15" cols="60"></textarea>
+            <i @click="sendMail" class="fas fa-paper-plane"></i>
+        </main>
         
     </section>
     `,
@@ -58,14 +62,15 @@ export default {
             this.$router.push('/email')
         },
     },
-    watch: {
-        '$route.params.emailId' (emailId) {
-            emailService.getEmailById(emailId)
+    created() {
+        if (this.$route.params.emailId) {
+            emailService.getEmailById(this.$route.params.emailId)
                 .then(email => {
-                    this.mail.subject = 'Re:'
+                    this.email.to = email.from
+                    this.email.subject = 'Re:' + email.subject
                     console.log(email);
                 })
-
         }
-    },
+
+    }
 }
