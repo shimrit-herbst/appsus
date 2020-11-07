@@ -4,15 +4,37 @@ import { utilService } from '../../../js/services/util-service.js'
 const STORAGE_KEY = 'notesDB'
 
 var gNotes = [
-    _createNoteTxt('Fullstack Me Baby!'),
+    _createNoteTxt('If you can dream it, you can do it!'),
     _createNoteImg(
         'https://images.unsplash.com/photo-1601997719352-f2bf5db7fd16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
         'Me playing Mi'
     ),
+    _createNoteImg(
+        'https://miro.medium.com/max/700/0*PLCqmNStib2H47iv', 'Winter Vibes'
+    ),
+    _createNoteTxt('Always look on the bright side of life 😄'),
+    _createNoteImg(
+        'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg',
+        'Cute Vibes'
+    ),
     _createNoteTodos(
-        'Do that, Do this'
-    )
+        'Buy suger, Go for a walk, Buy new fridge, Plan this weekend\'s hike'
+    ),
+    _createNoteImg(
+        'https://greenglobaltravel.com/wp-content/uploads/Diatoy-Island-Hopping.jpg',
+        'I do a thing called what I want'
+    ),
+    _createNoteTodos(
+        'Edit article, Brainstorm design ideas, Find new theme for website'
+    ),
+    _createNoteImg(
+        'https://greenglobaltravel.com/wp-content/uploads/Diatoy-Island-Hopping.jpg',
+        'I do a thing called what I want'
+    ),
 ]
+
+
+'I do a thing called what I want'
 
 function getNotes() {
     gNotes = utilService.loadFromStorage(STORAGE_KEY) ? utilService.loadFromStorage(STORAGE_KEY) : gNotes;

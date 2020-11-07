@@ -9,7 +9,7 @@ export default {
     template: `
         <section class="keep-list">
             <ul>
-                <li v-for="note in notes" :key="note.id">
+                <li class="note" v-for="note in notes" :key="note.id">
                     <keep-preview :note="note" @save="saveNote(note)" @remove="removeNote(note.id)" />
                 </li>
             </ul>

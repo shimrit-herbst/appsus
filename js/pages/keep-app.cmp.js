@@ -7,10 +7,10 @@ export default {
     name: 'miss-keep',
     template: `
         <section class="miss-keep">
-        <header>
-            <keep-search @filtered="setFilter"/> 
-        </header>
-            <keep-add />
+            <div class="top-sections">
+                <keep-search @filtered="setFilter"/> 
+                <keep-add />
+            </div>
             <keep-list :notes="notesToShow"/>
         </section>
 `,
