@@ -13,10 +13,10 @@ export default {
             <div class="keep-edit-icons">
                 <!-- <i title="Pin note" class="fa fas fa-thumbtack"></i> -->
                 <!-- <i title="Send note to email" class="fa fas fa-envelope"></i> -->
-                <i title="Change background color" class="fa fas fa-palette"></i>
+                <!-- <i title="Change background color" class="fa fas fa-palette"></i> -->
                 <i title="Remove note" @click="emitRemove" class="fa fas fa-trash-alt"></i>
-                <i title="Save note" @click="onSaveClick" v-if="isEditable" class="fa fas fa-save"></i> 
-                <i title="Edit note" @click="onEditClick" v-else class="fa fas fa-edit"></i> 
+                <i title="Save note" @click="onSaveClick" v-if="isEditable && note.type === 'noteTxt'" class="fa fas fa-save"></i> 
+                <i title="Edit note" @click="onEditClick" v-if="!isEditable && note.type === 'noteTxt'" class="fa fas fa-edit"></i> 
                 <!-- <router-link :to="'/keep/edit/' + note.id"><i title="Edit note" class="fa fas fa-edit"></i></router-link> -->
             </div>
         </section>
