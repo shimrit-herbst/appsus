@@ -4,6 +4,10 @@ import { utilService } from '../../../js/services/util-service.js'
 const STORAGE_KEY = 'notesDB'
 
 var gNotes = [
+    _createNoteImg(
+        'https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png?w=590&h=800&756A88D1-C0EA-4C21-92BE0BB43C14B265',
+        'Welcome 🥰'
+    ),
     _createNoteTxt('If you can dream it, you can do it!'),
     _createNoteImg(
         'https://images.unsplash.com/photo-1601997719352-f2bf5db7fd16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
@@ -22,19 +26,12 @@ var gNotes = [
     ),
     _createNoteImg(
         'https://greenglobaltravel.com/wp-content/uploads/Diatoy-Island-Hopping.jpg',
-        'I do a thing called what I want'
+        'I do a thing called what I want!'
     ),
     _createNoteTodos(
         'Edit article, Brainstorm design ideas, Find new theme for website'
     ),
-    _createNoteImg(
-        'https://greenglobaltravel.com/wp-content/uploads/Diatoy-Island-Hopping.jpg',
-        'I do a thing called what I want'
-    ),
 ]
-
-
-'I do a thing called what I want'
 
 function getNotes() {
     gNotes = utilService.loadFromStorage(STORAGE_KEY) ? utilService.loadFromStorage(STORAGE_KEY) : gNotes;
@@ -50,7 +47,7 @@ function getEmptyTextNote() {
     }
 }
 
-function _createNoteTxt(txt, title = 'My note') {
+function _createNoteTxt(txt, title = 'Note to self') {
     return {
         id: utilService.createId(),
         type: 'noteTxt',

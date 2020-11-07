@@ -2,7 +2,7 @@ export default {
     name: 'appsus-app-footer',
     template: `
     <section class="appsus-app-footer">
-        <p><small>Coffe Rights 2020</small></p>
+        <p><small>Tomer Pinto and Shimrit Herbst - Coding Academy 2020</small></p>
     </section>
     `,
 }

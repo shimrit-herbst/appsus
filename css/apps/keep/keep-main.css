@@ -6,6 +6,10 @@
 @import './cmps/keep-search.css';
 @import './cmps/keep-add.css';
 
+.miss-keep {
+    margin: 50px;
+}
+
 .miss-keep .top-sections {
     display: flex;
     flex-direction: column;

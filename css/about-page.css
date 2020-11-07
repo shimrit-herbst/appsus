@@ -1,0 +1,11 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page>* {
+    font-family: 'Garamond';
+    font-size: 30px;
+    transform: rotate(-20deg);
+    margin: 10px;
+}

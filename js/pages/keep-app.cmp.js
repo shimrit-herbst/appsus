@@ -24,14 +24,16 @@ export default {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const titleFilter = this.filterBy.byTitle.toLowerCase();
-            const filteredByTitle = this.notes.filter(note => {
+            const BodyFilter = this.filterBy.byBody.toLowerCase();
+            const filteredByTitleOrBody = this.notes.filter(note => {
                 return (
-                    note.info.title.toLowerCase().includes(titleFilter)
+                    note.info.title.toLowerCase().includes(titleFilter) ||
+                    note.info.txt.toLowerCase().includes(BodyFilter)
                 )
             })
             const typeFilter = this.filterBy.byType;
-            if (typeFilter === '') return filteredByTitle;
-            const filteredByTitleAndType = filteredByTitle.filter(note => {
+            if (typeFilter === '') return filteredByTitleOrBody;
+            const filteredByTitleAndType = filteredByTitleOrBody.filter(note => {
                 return (
                     note.type === typeFilter
                 )
@@ -41,7 +43,6 @@ export default {
     },
     methods: {
         setFilter(filterBy) {
-            console.log(filterBy)
             this.filterBy = filterBy;
         }
     },

@@ -16,8 +16,8 @@ export default {
                 <label><i title="Change background color" class="fa fas fa-palette"><input type="color" class="color-input" v-model="note.style.backgroundColor" @change="onChangeColorClick">
                 </i></label>
                 <i title="Remove note" @click="emitRemove" class="fa fas fa-trash-alt"></i>
-                <i title="Save note" @click="onSaveClick" v-if="isEditable && note.type === 'noteTxt'" class="fa fas fa-save"></i> 
-                <i title="Edit note" @click="onEditClick" v-if="!isEditable && note.type === 'noteTxt'" class="fa fas fa-edit"></i> 
+                <i title="Save note" @click="onSaveClick" v-if="isEditable && note.type !== 'noteImg'" class="fa fas fa-save"></i> 
+                <i title="Edit note" @click="onEditClick" v-if="!isEditable && note.type !== 'noteImg'" class="fa fas fa-edit"></i> 
                 <!-- <router-link :to="'/keep/edit/' + note.id"><i title="Edit note" class="fa fas fa-edit"></i></router-link> -->
             </div>
         </section>

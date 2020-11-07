@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 50px;
-
 }
 
 .appsus .main-container {
@@ -82,7 +80,7 @@ svg[class*=svg-shape-] {
 .leaf {
     position: absolute;
     display: block;
-    left: 1216px;
+    left: 1556px;
     top: 400px;
     transform: translate3d(-13.344px, 11.208px, 0px);
     transform-style: preserve-3d;
@@ -98,7 +96,7 @@ svg[class*=svg-shape-] {
 .yellow-triangle {
     position: absolute;
     display: block;
-    left: 82px;
+    left: 186px;
     top: 400px;
     transform: translate3d(-16.68px, 14.01px, 0px);
     transform-style: preserve-3d;
@@ -130,7 +128,7 @@ svg[class*=svg-shape-] {
 .green-triangle {
     position: absolute;
     display: block;
-    left: 1022px;
+    left: 1200px;
     top: 152px;
     transform: translate3d(-16.68px, 14.01px, 0px);
     transform-style: preserve-3d;
@@ -146,7 +144,7 @@ svg[class*=svg-shape-] {
 .dot {
     position: absolute;
     display: block;
-    left: 943px;
+    left: 1115px;
     top: 238px;
     transform: translate3d(-16.68px, 14.01px, 0px);
     transform-style: preserve-3d;
