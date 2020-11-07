@@ -1,13 +1,12 @@
 .keep-list ul {
-    display: flex;
-    flex-wrap: wrap;
-}
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, 300px);}
 
 .keep-list li {
     list-style-type: none;
     border-radius: 12px;
     margin: 5px;
-    /* width: fit-content; */
     height: fit-content;
 }
 

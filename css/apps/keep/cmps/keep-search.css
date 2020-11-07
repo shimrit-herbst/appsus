@@ -11,3 +11,13 @@
 .keep-search .title-search {
     margin: 19px 0px;
 }
+
+.keep-search .title-search >* {
+    font-family: Garamond;
+    font-size: 18px;
+}
+
+.keep-search .type-search >*{
+    font-family: Garamond;
+    font-size: 18px;
+}

@@ -1,10 +1,9 @@
 export default {
     template: `
     <section class="keep-search">
-        <h3>Notes</h3>
         <div class="title-search">
             <label>Search by note title:</label>
-            <input type="text" class="note-search" v-model="byTitle" placeholder="Search here..." @input="emitFilter">
+            <input type="text" class="note-search" v-model="byTitle" placeholder="Search" @input="emitFilter">
         </div>
         <div class="type-search">
             <label>Search by type of note:</label>

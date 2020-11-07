@@ -29,6 +29,11 @@
     text-align: center;
 }
 
-.keep-preview a{
+.keep-preview a {
     text-decoration: none;
+}
+
+.keep-preview .keep-edit-icons .color-input {
+    position: absolute;
+    z-index: -1;
 }
