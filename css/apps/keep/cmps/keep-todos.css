@@ -3,6 +3,16 @@
     flex-direction: column;
 }
 
+.keep-todos li {
+    display: flex;
+}
+
 .done {
     text-decoration: line-through;
+}
+
+.done-at {
+    text-align: end;
+    color: gray;
+    flex: auto;
 }

@@ -1,3 +1,4 @@
+import { eventBus } from '../../../js/services/event-bus-service.js'
 
 export default {
     props: ['note'],
@@ -5,12 +6,12 @@ export default {
     <section class="keep-todos">
         <h3>{{noteInfo.title}}</h3>
         <ul>
-            <li v-for="todo in noteInfo.todos">
-                <label :class="checkboxClass(todo)">
-                    <input type="checkbox" v-model="todo.isDone"/>    
+            <li v-for="(todo, todoIdx) in noteInfo.todos">
+                <label :class="checkboxClass(todo)" >
+                    <input type="checkbox" v-model="todo.isDone" @change="checkboxClicked(todo, todoIdx)"/>    
                     {{todo.txt}}
-                    {{todo.doneAt}}
                 </label>
+                <label class="done-at">{{doneAtToDisplay(todo)}}</label>
             </li>
         </ul>
     </section>
@@ -21,8 +22,17 @@ export default {
         }
     },
     methods: {
+        doneAtToDisplay(todo) {
+            if (todo.isDone)
+                return new Date(todo.doneAt).toLocaleTimeString();
+        },
         checkboxClass(todo) {
-            return {done: todo.isDone}
+            return { done: todo.isDone }
+        },
+        checkboxClicked(todo, todoIdx) {
+            if (todo.isDone) todo.doneAt = new Date();
+            else todo.doneAt = null;
+            eventBus.$emit('save', this.note);
         },
     },
 }

@@ -1,5 +1,7 @@
 import { keepService } from '../services/keep-service.js';
+import { eventBus } from '../../../js/services/event-bus-service.js'
 import keepPreview from './keep-preview.cmp.js';
+
 
 export default {
     name: 'keep-list',
@@ -17,7 +19,7 @@ export default {
     methods: {
         removeNote(noteId) {
             keepService.removeNote(noteId)
-                .then(()=> this.$emit('show-msg', 'Note was removed successfully!'))
+                .then(() => this.$emit('show-msg', 'Note was removed successfully!'))
         },
         saveNote(note) {
             keepService.saveNote(note)
@@ -33,6 +35,9 @@ export default {
     computed: {
         BgColor() {
         }
+    },
+    created() {
+        eventBus.$on('save', (note) => this.saveNote(note))
     },
     components: {
         keepPreview,
