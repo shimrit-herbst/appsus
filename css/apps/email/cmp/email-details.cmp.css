@@ -1,12 +1,12 @@
 .email-details {
-    bottom: 49px;
-    left: 140px;
+    bottom: 80px;
+    left: 220px;
     position: fixed;
     background: #edf1f1;
     padding: 15px;
     border: 0.5px solid gray;
     border-radius: 15px;
-    height: 580px;
+    height: 523px;
 }
 
 .email-details .mail-header {
