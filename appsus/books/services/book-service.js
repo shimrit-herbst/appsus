@@ -360,7 +360,7 @@ function addReview(bookId, review) {
     )
 }
 
-function getBooksFromGoogle(searchKey = 'crime') {
+function getBooksFromGoogle(searchKey = 'coding') {
     // if (!utilService.loadFromStorage(GOOGLE_BOOKS_KEY)) {
     return axios.get(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${searchKey}`)
         .then(res => {

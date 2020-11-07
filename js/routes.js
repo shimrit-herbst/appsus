@@ -29,13 +29,13 @@ const myRoutes = [{
         component: bookApp
     },
     {
+        path: '/book/add',
+        component: bookAdd
+    },
+    {
         path: '/book/:bookId',
         component: bookDetails
     },
-    // {
-    //     path: '/book/add',
-    //     component: bookAdd
-    // },
     //  {
     //      path: '/keep/edit/:keepId',
     //      component: keepEdit
