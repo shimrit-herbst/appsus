@@ -1,6 +1,8 @@
 .appsus-app-header .main-nav .nav-img {
     position: relative;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .appsus-app-header .main-nav-list {
@@ -87,5 +89,9 @@ body.menu-open .screen {
         height: 100vh;
         z-index: 2;
         border-radius: 0;
+        margin: 0;
+    }
+    .appsus-app-header .main-nav-list a {
+        font-size: 2.2rem;
     }
 }

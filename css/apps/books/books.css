@@ -329,3 +329,25 @@ html {
 .book-app .about-page p {
     color: #073B4C;
 }
+
+@media (max-width:710px) {
+    .details-main-content {
+        flex-direction: column;
+    }
+    .details-main-content img {
+        width: fit-content;
+    }
+    .book-details .long-details {
+        padding: 0;
+    }
+    .book-details .short-details {
+        padding: 0;
+        align-items: center;
+    }
+    .review-add .freeTxt textarea {
+        width: fit-content;
+    }
+    .book-filter input {
+        margin-block-end: 10px;
+    }
+}

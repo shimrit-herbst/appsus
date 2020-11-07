@@ -44,6 +44,7 @@
     font-size: 4rem;
 }
 
+
 /* svgs */
 
 .svg-shape-wrapper {
@@ -182,8 +183,28 @@ svg[class*=svg-shape-] {
     0% {
         transform: rotate(0);
     }
-
     100% {
         transform: rotate(1turn);
+    }
+}
+
+@media (max-width: 460px) {
+    .inner-apps-names .app-name .first-letter {
+        font-size: 3rem;
+    }
+    .appsus-app {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .appsus-app .appsus-name {
+        margin: 0;
+        margin-block-end: 10px;
+    }
+    .appsus-app .inner-apps-names {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        margin: 0;
     }
 }

@@ -3,8 +3,8 @@ export default {
     template: `
     <section class="appsus-app-header">
         <nav class="main-nav">
-            <div class="nav-img"><router-link to="/" >
-                <img src="../../assets/imgs/eye-img.png" /></router-link >         
+            <div @click="onGoHome" class="nav-img">
+                <img src="../../assets/imgs/eye-img.png" />         
             </div>
             <div class="screen" @click="toggleMenu"></div>
             <i @click="toggleMenu"class="fas fa-bars hamburger-sign"></i>
@@ -25,6 +25,9 @@ export default {
         }
     },
     methods: {
+        onGoHome() {
+            this.$router.push('/')
+        },
         toggleMenu() {
             this.isShowNavBar = !this.isShowNavBar;
             document.body.classList.toggle('menu-open');

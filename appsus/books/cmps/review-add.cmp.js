@@ -18,7 +18,7 @@ export default {
                 <input v-model="readDate" type="date">
             </div>
             <div class="freeTxt">
-                <textarea v-model="reviewTxt" name="review" rows="4" cols="50">Anything you would like to add...</textarea>
+                <textarea v-model="reviewTxt" name="review" rows="4" cols="30">Anything you would like to add...</textarea>
             </div>      
             <button @click.prevent="submitForm">Add</button>
         </form>
