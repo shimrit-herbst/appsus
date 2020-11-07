@@ -6,7 +6,7 @@ export default {
         <h3>{{noteInfo.title}}</h3>
         <ul>
             <li v-for="todo in noteInfo.todos">
-                <label>
+                <label :class="checkboxClass(todo)">
                     <input type="checkbox" v-model="todo.isDone"/>    
                     {{todo.txt}}
                     {{todo.doneAt}}
@@ -17,7 +17,12 @@ export default {
     `,
     data() {
         return {
-            noteInfo: this.note.info
+            noteInfo: this.note.info,
         }
+    },
+    methods: {
+        checkboxClass(todo) {
+            return {done: todo.isDone}
+        },
     },
 }
