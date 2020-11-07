@@ -37,7 +37,7 @@
 }
 
 .inner-apps-names .app-name:hover {
-    text-shadow: 4px 5px 8px rgba(151, 107, 12, 0.74);
+    text-shadow: 4px 5px 8px rgb(155, 155, 155);
 }
 
 .inner-apps-names .app-name .first-letter {

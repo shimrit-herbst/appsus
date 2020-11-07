@@ -4,7 +4,7 @@ export default {
     <section class="appsus-app-header">
         <nav class="main-nav">
             <div @click="onGoHome" class="nav-img">
-                <img src="../../assets/imgs/eye-img.png" />         
+                <img src="../assets/imgs/eye-img.png" />         
             </div>
             <div class="screen" @click="toggleMenu"></div>
             <i @click="toggleMenu"class="fas fa-bars hamburger-sign"></i>

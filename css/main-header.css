@@ -1,8 +1,11 @@
 .appsus-app-header .main-nav .nav-img {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+}
+
+.appsus-app-header .main-nav .nav-img img {
+    width: 250px;
 }
 
 .appsus-app-header .main-nav-list {
@@ -77,9 +80,9 @@ body.menu-open .screen {
 
 .hamburger-sign {
     font-size: 36px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
+    position: absolute;
+    top: 50px;
+    right: 35px;
     cursor: pointer;
 }
 
@@ -94,7 +97,6 @@ body.menu-open .screen {
         border-radius: 0;
         margin: 0;
     }
-
     .appsus-app-header .main-nav-list a {
         font-size: 2.2rem;
     }
