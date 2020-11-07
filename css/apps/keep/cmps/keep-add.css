@@ -1,28 +1,48 @@
 .keep-add {
-    border: 1px solid black;
     padding: 15px;
     margin: 10px;
+}
+
+.keep-add form {
+    position: inherit;
 }
 
 .keep-add form>* {
     font-family: Garamond;
     font-size: 18px;
+    color: darkgrey;
+    cursor: pointer;
 }
 
 .keep-add input {
-    padding: 5px;
-    position: relative;
-    width: 300px;
+    width: 650px;
     font-family: Garamond;
-    font-size: 18px;
+    align-self: center;
+    font-size: 25px;
+    padding: 12px 30px 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(60, 64, 67, 0.302);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
 
 .keep-add .keep-type-icons {
     position: relative;
-    top: -26px;
-    right: -231px;
+    top: -38px;
+    right: -435px;
 }
 
 .keep-add .keep-type-icons>* {
-    font-size: 18px;
+    margin: 0 10px;
+    font-size: 21px;
+}
+
+.keep-add .save-btn {
+    font-size: 24px;
+    position: relative;
+    top: -71px;
+    left: 572px;
+    background-color: none;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    border: none;
+    background-color: initial;
 }

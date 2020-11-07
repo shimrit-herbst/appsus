@@ -10,9 +10,9 @@ export default {
     <section class="appsus-app">
         <h2 class="appsus-name">APPSUS</h2>
         <div class="inner-apps-names">
-            <h3><span class="first-letter">M</span>ister Email</h3>
-            <h3><span class="first-letter">M</span>iss Keep</h3>
-            <h3><span class="first-letter">M</span>iss Books</h3>
+            <router-link to="/email" class="app-name"><span class="first-letter">M</span>ister Email</router-link>
+            <router-link to="/keep" class="app-name"><span class="first-letter">M</span>iss Keep</router-link>
+            <router-link to="/book" class="app-name"><span class="first-letter">M</span>iss Books</router-link>
         </div>
         <div class="svg-shape-wrapper">
             <ul>

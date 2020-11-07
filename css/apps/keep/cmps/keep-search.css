@@ -1,5 +1,8 @@
+input:focus {
+    outline: none;
+}
+
 .keep-search {
-    border: 1px solid black;
     padding: 15px;
     margin: 10px;
 }
@@ -12,12 +15,44 @@
     margin: 19px 0px;
 }
 
-.keep-search .title-search >* {
+.keep-search .title-search>* {
     font-family: Garamond;
-    font-size: 18px;
+    font-size: 25px;
+    margin-right: 13px;
 }
 
-.keep-search .type-search >*{
+.keep-search .type-search>* {
     font-family: Garamond;
-    font-size: 18px;
+    font-size: 25px;
+    margin-right: 13px;
+}
+
+.title-search input {
+    width: 500px;
+    margin-right: 13px;
+    align-self: center;
+    padding: 12px 30px 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(60, 64, 67, 0.302);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+}
+
+.type-search select {
+    width: 500px;
+    align-self: center;
+    padding: 12px 30px 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(60, 64, 67, 0.302);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    background-color: white;
+    background-image: url(data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>);
+    background-repeat: no-repeat;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 17px;
+}
+
+.type-search select:focus {
+    outline: none;
 }

@@ -16,32 +16,32 @@ export default {
         </div>
     </section>
     `,
-    data(){
-        return{
-            byTitle:'',
-            byType:'',
+    data() {
+        return {
+            byTitle: '',
+            byType: '',
         }
     },
     methods: {
-        emitFilter(){
+        emitFilter() {
             console.log(this.byType)
             this.$emit('filtered', this.filterBy)
         }
     },
-    computed:{
-        byTypeInService(){
-            switch (this.byType){
+    computed: {
+        byTypeInService() {
+            switch (this.byType) {
                 case 'Text': return 'noteTxt';
                 case 'Image': return 'noteImg';
                 case 'List': return 'noteTodos';
-                default : return ''; 
+                default: return '';
             }
         },
-        filterBy(){
-            return{
+        filterBy() {
+            return {
                 byTitle: this.byTitle,
                 byType: this.byTypeInService,
-            }  
+            }
         }
     }
 }

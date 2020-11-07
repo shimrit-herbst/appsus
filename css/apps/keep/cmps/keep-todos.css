@@ -5,6 +5,8 @@
 
 .keep-todos li {
     display: flex;
+    font-size: 20px;
+
 }
 
 .done {
