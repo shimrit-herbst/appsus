@@ -1,0 +1,306 @@
+/* @font-face {
+    font-family: itim;
+    src: url(../font/Itim-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background-color: #06D6A0;
+} */
+
+html {
+    font-family: Garamond;
+}
+
+.book-app input {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    padding: 12px;
+    margin-inline-end: 10px;
+    font-size: 16px;
+    font-family: Garamond;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.book-app h1,
+.book-app h2,
+.book-app h3,
+.book-app h4,
+.book-app h5,
+.book-app h6 {
+    text-transform: capitalize;
+}
+
+.book-app a {
+    color: #073B4C;
+    font-size: 18px;
+}
+
+.book-app ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.book-app .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.book-app .main-app-container {
+    flex-grow: 1;
+}
+
+.book-app .main-header {
+    background-color: #073B4C;
+    min-height: 100px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.book-app .main-header h1 {
+    align-self: center;
+    font-size: 46px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.book-list-container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.book-list-container li {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #C8B52A;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.book-list-container img {
+    width: 150px;
+    max-height: 200px;
+    border-radius: 15px;
+}
+
+.book-list-container li:hover {
+    transform: scale(1.05);
+}
+
+.book-preview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-preview h2 {
+    margin: 5px;
+}
+
+.book-title {
+    text-transform: uppercase;
+}
+
+.published {
+    /* text-transform: capitalize; */
+    color: #FFD166;
+}
+
+.red {
+    color: #EF476F;
+}
+
+.green {
+    color: #06D6A0;
+}
+
+.on-sale {
+    color: #EF476F;
+}
+
+.book-details {
+    color: #073B4C;
+}
+
+.book-details .paging {
+    color: #073B4C;
+    font-size: 24px;
+    font-family: Garamond;
+    background-color: inherit;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.paging-control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-main-content {
+    display: flex;
+    min-height: 600px;
+}
+
+.book-details img {
+    border-radius: 15px;
+    border: 1px solid #073B4C;
+}
+
+.book-details .short-details {
+    flex-grow: 1;
+    padding-inline-end: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-details .long-details {
+    flex-grow: 1;
+    padding-inline-start: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.book-details p {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.book-details .long-text button {
+    display: inline-block;
+    background-color: inherit;
+    border: 0.5px solid #118AB2;
+    border-radius: 15px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.book-details button:hover {
+    background-color: #FFD166;
+}
+
+.long-text {
+    display: flex;
+    align-items: center;
+}
+
+.book-details .long-details button {
+    align-self: center;
+}
+
+.book-app footer {
+    background-color: #073B4C;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-add input {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 12px
+}
+
+.review-add .rate-stars {
+    display: inline;
+}
+
+.review-add button {
+    font-family: Garamond;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: inherit;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.review-add .checked {
+    color: orange;
+}
+
+.review-add .freeTxt textarea {
+    text-align: left;
+    margin-block-start: 20px;
+}
+
+.review-add button h2 {
+    font-family: Garamond;
+}
+
+.book-app .user-msg {
+    font-size: 18px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #EF476F;
+    padding: 10px 20px;
+}
+
+.book-app .user-msg button {
+    color: #FFD166;
+    background-color: #EF476F;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.book-app .home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-app .home-page h1 {
+    text-align: center;
+    font-size: 38px;
+}
+
+.book-app .about-page {
+    position: relative;
+}
+
+.book-app .about-page h1 {
+    font-size: 38px;
+}
+
+.book-app .about-page img {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.book-app .about-page p {
+    color: #073B4C;
+}

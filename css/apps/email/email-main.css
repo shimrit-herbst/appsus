@@ -101,8 +101,8 @@
     }
     .mister-email .filter-media {
         display: block;
-        position: fixed;
-        top: 310px;
+        position: absolute;
+        top: 350px;
         right: 20px;
         font-size: 22px;
         cursor: pointer;

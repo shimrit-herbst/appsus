@@ -7,7 +7,9 @@ import misterEmail from './pages/email-app.cmp.js';
 import emailDetails from '../appsus/email/pages/email-details.cmp.js'
 import emailCompose from '../appsus/email/cmps/email-compose.cmp.js'
 import emailList from '../appsus/email/cmps/email-list.cmp.js'
-
+import bookApp from './pages/book-app.cmp.js';
+import bookDetails from '../appsus/books/pages/book-details.cmp.js';
+import bookAdd from '../appsus/books/pages/book-add.cmp.js';
 
 
 const myRoutes = [{
@@ -22,6 +24,18 @@ const myRoutes = [{
         path: '/keep',
         component: missKeep
     },
+    {
+        path: '/book',
+        component: bookApp
+    },
+    {
+        path: '/book/:bookId',
+        component: bookDetails
+    },
+    // {
+    //     path: '/book/add',
+    //     component: bookAdd
+    // },
     // {
     //     path: '/keep/edit/:keepId',
     //     component: keepEdit
@@ -47,14 +61,6 @@ const myRoutes = [{
 
         ]
     },
-    // {
-    //     path: '/book',
-    //     component: bookApp
-    // },
-    // {
-    //     path: '/book/:bookId',
-    //     component: bookDetails
-    // },
 ]
 
 export const myRouter = new VueRouter({ routes: myRoutes })
