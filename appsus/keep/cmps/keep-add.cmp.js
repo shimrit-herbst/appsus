@@ -8,10 +8,10 @@ export default {
             <input type="text" :placeholder="textToShow" v-model="input"/>
             <div class="keep-type-icons">
                 <i class="fas fa-font" @click="setNoteType('noteTxt')"></i> 
-                <i class="far fa-image" @click="setNoteType('noteImg')"></i>
+                <i class="fas fa-image" @click="setNoteType('noteImg')"></i>
                 <i class="fas fa-tasks" @click="setNoteType('noteTodos')"></i>
             </div>
-            <button>Save</button>
+            <button class="save-btn">Save</button>
         </form>
     </section>`,
     data() {
