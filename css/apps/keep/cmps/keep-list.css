@@ -1,14 +1,19 @@
+.keep-list {
+    display: flex;
+    flex-direction: column;
+}
+
 .keep-list ul {
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: repeat(auto-fill, 300px);
     text-align: center;
+    grid-gap: 10px;
 }
 
 .keep-list .note {
     list-style-type: none;
     border-radius: 12px;
-    margin: 5px;
     height: fit-content;
 }
 
@@ -17,6 +22,10 @@
 }
 
 @media (max-width: 460px) {
+    .keep-list ul {
+        margin: 0 auto;
+    }
+
     .keep-list .note {
         display: flex;
         justify-content: flex-end;

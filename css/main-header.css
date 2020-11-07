@@ -7,10 +7,13 @@
 
 .appsus-app-header .main-nav-list {
     position: absolute;
-    right: 36.5%;
+    right: 0;
+    top: 0;
     background-color: rgb(204, 198, 198);
     z-index: 2;
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    margin: 0;
+    height: 100vh;
 }
 
 .appsus-app-header .main-nav-list li {
@@ -18,8 +21,8 @@
 }
 
 .appsus-app-header .main-nav-list a {
-    font-family: Garamond;
-    font-size: 3rem;
+    font-family: Roboto;
+    font-size: 1.5rem;
     margin: auto;
     height: 8.1875rem;
     display: flex;
@@ -91,6 +94,7 @@ body.menu-open .screen {
         border-radius: 0;
         margin: 0;
     }
+
     .appsus-app-header .main-nav-list a {
         font-size: 2.2rem;
     }

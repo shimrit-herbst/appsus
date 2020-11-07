@@ -1,11 +1,12 @@
 .about-page {
     display: flex;
     flex-direction: column;
+    line-height: 2;
+    margin: 0 auto;
 }
 
 .about-page>* {
-    font-family: 'Garamond';
+    font-family: Roboto;
     font-size: 30px;
-    transform: rotate(-20deg);
-    margin: 10px;
+    margin: 0;
 }

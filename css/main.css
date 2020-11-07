@@ -1,20 +1,19 @@
 @import '../css/apps/books/books.css';
 @import '../css/apps/keep/keep-main.css';
 
-/* body, html   */
-
 @import './fonts.css';
 @import './apps/email/email-main.css';
 @import './home-page.css';
 @import './main-footer.css';
 @import './main-header.css';
 @import './about-page.css';
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    font-family: Garamond;
+    font-family: Roboto;
 }
 
 body {

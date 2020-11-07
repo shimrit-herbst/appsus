@@ -3,8 +3,8 @@ input:focus {
 }
 
 .keep-search {
-    padding: 15px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .keep-search h3 {
@@ -12,29 +12,29 @@ input:focus {
 }
 
 .keep-search .title-search {
-    margin: 19px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-end: 15px;
 }
 
-.keep-search .title-search label {
-    /* margin: 19px 0px; */
-    margin-inline-end: 36px;
+.keep-search .type-search {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-end: 25px;
 }
 
 .keep-search .title-search>* {
-    font-family: Garamond;
+    font-family: Roboto;
     font-size: 25px;
-    margin-right: 13px;
 }
 
 .keep-search .type-search>* {
-    font-family: Garamond;
+    font-family: Roboto;
     font-size: 25px;
-    margin-right: 13px;
 }
 
 .title-search input {
-    width: 32rem;
-    margin-right: 13px;
+    width: 100%;
     align-self: center;
     padding: 12px 30px 12px 30px;
     border-radius: 50px;
@@ -43,7 +43,7 @@ input:focus {
 }
 
 .type-search select {
-    width: 31.25rem;
+    width: 100%;
     align-self: center;
     padding: 12px 30px 12px 30px;
     border-radius: 50px;
@@ -63,21 +63,17 @@ input:focus {
 }
 
 @media (max-width: 870px) {
-    .keep-search .title-search>* {
-        margin: 17px 0px;
-    }
-
+   
     .keep-search .type-search>* {
-        margin: 17px 0px;
     }
 }
 
 @media (max-width: 460px) {
     .keep-search .title-search>* {
-        width: 23rem;
+        width: 100%;
     }
 
     .keep-search .type-search>* {
-        width: 23rem;
+        width: 100%;
     }
 }
