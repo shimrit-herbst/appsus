@@ -37,7 +37,7 @@ function _createNoteTxt(txt, title = 'My note') {
             title,
         },
         style: {
-            backgroundColor: "#add8e6"
+            backgroundColor: "#ff7e8b"
         },
         isPinned: true,
     }
@@ -52,7 +52,7 @@ function _createNoteImg(url, title = 'My image') {
             url
         },
         style: {
-            backgroundColor: "#f08080"
+            backgroundColor: "#fc3"
         },
         isPinned: true,
     }
@@ -75,7 +75,7 @@ function _createNoteTodos(todos, title = 'My Todos') {
             todos,
         },
         style: {
-            backgroundColor: "#ffb6c1"
+            backgroundColor: "#6ff"
         },
         isPinned: true
     }

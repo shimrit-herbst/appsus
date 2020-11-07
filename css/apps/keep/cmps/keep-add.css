@@ -4,14 +4,25 @@
     margin: 10px;
 }
 
+.keep-add form>* {
+    font-family: Garamond;
+    font-size: 18px;
+}
+
 .keep-add input {
     padding: 5px;
     position: relative;
     width: 300px;
+    font-family: Garamond;
+    font-size: 18px;
 }
 
 .keep-add .keep-type-icons {
     position: relative;
-    top: -21px;
-    right: -237px;
+    top: -26px;
+    right: -231px;
+}
+
+.keep-add .keep-type-icons>* {
+    font-size: 18px;
 }
