@@ -8,6 +8,8 @@
 @import './home-page.css';
 @import './main-footer.css';
 @import './main-header.css';
+@import './about-page.css';
+
 * {
     box-sizing: border-box;
 }
