@@ -4,8 +4,8 @@ export default {
     props: ['email'],
     template: `
     <section class="email-preview">
-        <span>{{email.subject}}</span>
-        <span>{{emailBody}}</span>
+        <span class="subject">{{email.subject}}</span>
+        <span class="body">{{emailBody}}</span>
         <span>{{emailTime}}</span>
     </section>
 

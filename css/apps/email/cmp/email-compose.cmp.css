@@ -55,3 +55,12 @@
     text-align: end;
     margin-inline-start: 10px;
 }
+
+@media (max-width:710px) {
+    .email-compose {
+        bottom: 0;
+        width: 100%;
+        right: 0;
+        height: 80%;
+    }
+}
