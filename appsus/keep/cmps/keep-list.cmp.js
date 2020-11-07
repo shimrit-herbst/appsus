@@ -10,8 +10,7 @@ export default {
         <section class="keep-list">
             <ul>
                 <li v-for="note in notes" :key="note.id">
-                    <keep-preview :note="note" :class="BgColor" @save="saveNote(note)" @remove="removeNote(note.id)" />
-                    <!-- @changeBgColor="changeBgcColor"     -->
+                    <keep-preview :note="note" @save="saveNote(note)" @remove="removeNote(note.id)" />
                 </li>
             </ul>
         </section>
@@ -23,18 +22,7 @@ export default {
         },
         saveNote(note) {
             keepService.saveNote(note)
-        }
-        // changeBgColor(color, noteId) {
-        //     keepService.getNoteById(noteId)
-        //         .then(note => {
-        //             note.style.backgroundcolor = color;
-        //             keepService.saveNote(note)
-        //         });
-        // },
-    },
-    computed: {
-        BgColor() {
-        }
+        },
     },
     created() {
         eventBus.$on('save', (note) => this.saveNote(note))

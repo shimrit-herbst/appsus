@@ -13,7 +13,8 @@ export default {
             <div class="keep-edit-icons">
                 <!-- <i title="Pin note" class="fa fas fa-thumbtack"></i> -->
                 <!-- <i title="Send note to email" class="fa fas fa-envelope"></i> -->
-                <!-- <i title="Change background color" class="fa fas fa-palette"></i> -->
+                <label><i title="Change background color" class="fa fas fa-palette"><input type="color" class="color-input" v-model="note.style.backgroundColor" @change="onChangeColorClick">
+                </i></label>
                 <i title="Remove note" @click="emitRemove" class="fa fas fa-trash-alt"></i>
                 <i title="Save note" @click="onSaveClick" v-if="isEditable && note.type === 'noteTxt'" class="fa fas fa-save"></i> 
                 <i title="Edit note" @click="onEditClick" v-if="!isEditable && note.type === 'noteTxt'" class="fa fas fa-edit"></i> 
@@ -21,6 +22,7 @@ export default {
             </div>
         </section>
     `,
+
     data() {
         return {
             isEditable: false
@@ -34,16 +36,19 @@ export default {
         },
     },
     methods: {
-        emitRemove(){
-            this.$emit('remove', this.note.id);        
+        emitRemove() {
+            this.$emit('remove', this.note.id);
         },
-        onEditClick(){
+        onEditClick() {
             this.isEditable = true;
         },
-        onSaveClick(){
+        onSaveClick() {
             this.isEditable = false;
-            this.$emit('save', this.note);        
-        } 
+            this.$emit('save', this.note);
+        },
+        onChangeColorClick() {
+            this.$emit('save', this.note);
+        }
     },
     components: {
         noteTxt,
