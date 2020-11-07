@@ -14,7 +14,7 @@ body {
 } */
 
 html {
-    font-family: Garamond;
+    font-family: Roboto;
 }
 
 .book-app input {
@@ -22,7 +22,7 @@ html {
     padding: 12px;
     margin-inline-end: 10px;
     font-size: 16px;
-    font-family: Garamond;
+    font-family: Roboto;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -147,7 +147,7 @@ html {
 .book-details .paging {
     color: #073B4C;
     font-size: 24px;
-    font-family: Garamond;
+    font-family: Roboto;
     background-color: inherit;
     border: none;
     padding: 8px;
@@ -233,7 +233,7 @@ html {
 }
 
 .review-add button {
-    font-family: Garamond;
+    font-family: Roboto;
     border: none;
     padding: 5px;
     border-radius: 10px;
@@ -253,7 +253,7 @@ html {
 }
 
 .review-add button h2 {
-    font-family: Garamond;
+    font-family: Roboto;
 }
 
 .book-app .user-msg {
@@ -314,7 +314,7 @@ html {
 }
 
 .add-book-header span {
-    font-family: Garamond;
+    font-family: Roboto;
     font-size: 20px;
 }
 

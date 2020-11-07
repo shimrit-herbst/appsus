@@ -1,11 +1,6 @@
 @font-face {
-    font-family: Sifonn;
-    src: url(../assets/fonts/SIFONN_BASIC.otf);
-}
-
-@font-face {
-    font-family: Garamond;
-    src: url(../assets/fonts/EBGaramond-Regular.ttf);
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {

@@ -24,16 +24,14 @@ export default {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const titleFilter = this.filterBy.byTitle.toLowerCase();
-            const BodyFilter = this.filterBy.byBody.toLowerCase();
-            const filteredByTitleOrBody = this.notes.filter(note => {
+            const filteredByTitle = this.notes.filter(note => {
                 return (
-                    note.info.title.toLowerCase().includes(titleFilter) ||
-                    note.info.txt.toLowerCase().includes(BodyFilter)
+                    note.info.title.toLowerCase().includes(titleFilter)
                 )
             })
             const typeFilter = this.filterBy.byType;
-            if (typeFilter === '') return filteredByTitleOrBody;
-            const filteredByTitleAndType = filteredByTitleOrBody.filter(note => {
+            if (typeFilter === '') return filteredByTitle;
+            const filteredByTitleAndType = filteredByTitle.filter(note => {
                 return (
                     note.type === typeFilter
                 )

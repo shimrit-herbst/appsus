@@ -31,6 +31,7 @@ var gNotes = [
     _createNoteTodos(
         'Edit article, Brainstorm design ideas, Find new theme for website'
     ),
+    _createNoteTxt('Always Look On The Bright Side Of Life'),
 ]
 
 function getNotes() {

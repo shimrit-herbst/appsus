@@ -17,7 +17,7 @@
 
 .mister-email .email-header input {
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
-    font-family: Garamond;
+    font-family: Roboto;
     align-self: center;
     font-size: 18px;
     padding: 12px 30px 12px 30px;
@@ -38,7 +38,7 @@
     padding: 12px 30px 12px 30px;
     outline: none;
     transition: 0.2s;
-    font-family: Garamond;
+    font-family: Roboto;
     font-weight: bold;
 }
 

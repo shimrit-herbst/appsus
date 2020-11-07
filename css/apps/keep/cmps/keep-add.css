@@ -1,6 +1,4 @@
 .keep-add {
-    padding: 15px;
-    margin: 10px;
     display: flex;
 }
 
@@ -9,7 +7,7 @@
 }
 
 .keep-add form>* {
-    font-family: Garamond;
+    font-family: Roboto;
     font-size: 18px;
     color: darkgrey;
     cursor: pointer;
@@ -18,7 +16,7 @@
 .keep-add input {
     width: 45.625rem;
     height: 111px;
-    font-family: Garamond;
+    font-family: Roboto;
     align-self: center;
     font-size: 25px;
     padding: 12px 30px 12px 30px;
@@ -45,7 +43,7 @@
     background-color: none;
     border: none;
     background-color: initial;
-    font-family: Garamond;
+    font-family: Roboto;
     color: darkgrey;
     font-size: 25px;
     display: flex;
@@ -56,15 +54,6 @@
 
 
 @media (max-width: 870px) {
-    .keep-add input {
-        margin: 10px 0;
-        width: 33.25rem;
-    }
-
-    .type-search select {
-        width: 33.25rem;
-    }
-
     .keep-add .keep-type-icons {
         top: -47px;
         right: 32px;
@@ -78,7 +67,7 @@
 
 @media (max-width: 460px) {
     .keep-add input {
-        width: 23rem;
+        width: 19rem;
         height: 111px;
     }
 
