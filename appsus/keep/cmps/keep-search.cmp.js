@@ -24,7 +24,6 @@ export default {
     },
     methods: {
         emitFilter() {
-            console.log(this.byType)
             this.$emit('filtered', this.filterBy)
         }
     },

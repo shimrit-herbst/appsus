@@ -1,14 +1,19 @@
 import { eventBus } from '../../../js/services/event-bus-service.js'
 
 export default {
-    props: ['note'],
+    props: ['note', 'isEditable'],
     template: `
     <section class="keep-todos">
+    <div v-if="isEditable">
+        <input type="text" v-model="note.info.title"/>
+    </div>
+    <div v-else>
         <h3>{{noteInfo.title}}</h3>
+    </div>
         <ul>
             <li v-for="(todo, todoIdx) in noteInfo.todos">
                 <label :class="checkboxClass(todo)" >
-                    <input type="checkbox" v-model="todo.isDone" @change="checkboxClicked(todo, todoIdx)"/>    
+                <input type="checkbox" v-model="todo.isDone" @change="checkboxClicked(todo, todoIdx)"/>    
                     {{todo.txt}}
                 </label>
                 <label class="done-at">{{doneAtToDisplay(todo)}}</label>

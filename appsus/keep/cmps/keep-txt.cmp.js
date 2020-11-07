@@ -4,6 +4,7 @@ export default {
     template: `
     <section class="keep-txt">
         <div v-if="isEditable">
+            <input type="text" v-model="note.info.title"/>
             <input type="text" v-model="note.info.txt"/>
         </div>
         <div v-else>
