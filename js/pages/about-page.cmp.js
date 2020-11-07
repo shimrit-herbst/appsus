@@ -2,8 +2,11 @@ export default {
     name: 'about',
     template: `
     <section class="about-page container">
-        <h1>About Us...</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, natus, tenetur voluptatem quasi repudiandae voluptates iste quod labore expedita, eveniet delectus deserunt alias deleniti odit mollitia ab id rerum officiis nisi corporis aliquam! Perspiciatis obcaecati voluptas debitis! Autem repellendus nostrum, recusandae laborum corporis officia cupiditate porro, cumque odio tenetur officiis illo temporibus in possimus tempora. Et, voluptate! Soluta recusandae tempore quae ullam quam harum incidunt, enim necessitatibus temporibus inventore neque eligendi quibusdam quia unde aliquid alias commodi tempora in hic architecto error voluptatibus accusamus! Consectetur reiciendis, minus quasi fugit beatae, aspernatur eaque omnis eum vel, a facilis. Facere, consequatur molestiae.</p>
+        <h1 class="about-us-header">About Us...</h1>
+        <pre class="about-us-details">
+        Hi! nice to meet you :) 
+        We are Tomer Pinto and Shimrit Herbst, decided to go on partnership for the third sprint of Full-Stack development course by Coding Academy. 
+        </pre>
     </section>
     `,
 }
