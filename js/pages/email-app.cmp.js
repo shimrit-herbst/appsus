@@ -28,6 +28,9 @@ export default {
                 <i  class="fa fas fa-trash-alt" @click="onDeleteAll" ></i>
             </template>
         </div>
+
+            <i class="fas fa-bars filter-media" @click="toggleNavFilter"></i>
+
         <div class="email-body">
             <email-filter :unreadMail="unreadEmailsCount"/>
             <router-view></router-view>
@@ -43,11 +46,15 @@ export default {
             isToggleToStar: true,
             isSelectAll: false,
             selectedCounter: 0,
-            isInboxFilter: true,
-            // isShowDeleteBtn = false
+            isInboxFilter: true
         }
     },
     methods: {
+        toggleNavFilter() {
+            document.querySelector('.email-filter').style.display = 'flex'
+            console.log(document.querySelector('.email-filter').style);
+            // document.emailFilter.classList.toggle('display');
+        },
         onSearch() {
             eventBus.$emit('searchMails', this.searchTxt);
         },

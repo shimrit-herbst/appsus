@@ -41,3 +41,12 @@
 .email-details i {
     cursor: pointer;
 }
+
+@media (max-width:710px) {
+    .email-details {
+        bottom: 0;
+        left: 0;
+        height: 70%;
+        width: 100%;
+    }
+}
