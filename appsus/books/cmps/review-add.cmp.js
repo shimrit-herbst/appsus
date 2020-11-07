@@ -34,7 +34,7 @@ export default {
                     <span v-for="idx in 5-review.rate" class="fa fa-star"></span>
                     <h3>Read At: {{review.readDate}}</h3>
                     <p>{{review.reviewtxt}}</p>
-                    <button @click="onRemoveReview(review.id)">x</button>
+                    <button @click="onRemoveReview(review.id)"><i class="fas fa-arrow-alt-circle-left"></i></button>
                 </li>
             </ul>
         </div>
