@@ -1,15 +1,24 @@
 .keep-list ul {
     display: grid;
     grid-auto-flow: dense;
-    grid-template-columns: repeat(auto-fill, 300px);}
+    grid-template-columns: repeat(auto-fill, 300px);
+    text-align: center;
+}
 
-.keep-list li {
+.keep-list .note {
     list-style-type: none;
     border-radius: 12px;
     margin: 5px;
     height: fit-content;
 }
 
-.keep-list li:hover {
+.keep-list .note:hover {
     box-shadow: 6px 1px 10px rgba(43, 19, 11, 0.74);
+}
+
+@media (max-width: 460px) {
+    .keep-list .note {
+        display: flex;
+        justify-content: flex-end;
+    }
 }

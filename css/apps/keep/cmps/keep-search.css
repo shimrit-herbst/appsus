@@ -15,6 +15,11 @@ input:focus {
     margin: 19px 0px;
 }
 
+.keep-search .title-search label {
+    /* margin: 19px 0px; */
+    margin-inline-end: 36px;
+}
+
 .keep-search .title-search>* {
     font-family: Garamond;
     font-size: 25px;
@@ -28,7 +33,7 @@ input:focus {
 }
 
 .title-search input {
-    width: 500px;
+    width: 32rem;
     margin-right: 13px;
     align-self: center;
     padding: 12px 30px 12px 30px;
@@ -38,7 +43,7 @@ input:focus {
 }
 
 .type-search select {
-    width: 500px;
+    width: 31.25rem;
     align-self: center;
     padding: 12px 30px 12px 30px;
     border-radius: 50px;
@@ -55,4 +60,24 @@ input:focus {
 
 .type-search select:focus {
     outline: none;
+}
+
+@media (max-width: 870px) {
+    .keep-search .title-search>* {
+        margin: 17px 0px;
+    }
+
+    .keep-search .type-search>* {
+        margin: 17px 0px;
+    }
+}
+
+@media (max-width: 460px) {
+    .keep-search .title-search>* {
+        width: 23rem;
+    }
+
+    .keep-search .type-search>* {
+        width: 23rem;
+    }
 }

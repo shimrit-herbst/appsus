@@ -10,8 +10,8 @@ export default {
                 <i class="fas fa-font" @click="setNoteType('noteTxt')"></i> 
                 <i class="fas fa-image" @click="setNoteType('noteImg')"></i>
                 <i class="fas fa-tasks" @click="setNoteType('noteTodos')"></i>
+                <button class="save-btn">Save</button>
             </div>
-            <button class="save-btn">Save</button>
         </form>
     </section>`,
     data() {

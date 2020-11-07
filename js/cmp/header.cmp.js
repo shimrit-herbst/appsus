@@ -4,7 +4,7 @@ export default {
     <section class="appsus-app-header">
         <nav class="main-nav">
             <div class="nav-img"><router-link to="/" >
-                <img src="http://luminouspil.com/app/themes/luminouspil/dist/images/luminous_logo.png" /></router-link >         
+                <img src="../../assets/imgs/eye-img.png" /></router-link >         
             </div>
             <div class="screen" @click="toggleMenu"></div>
             <i @click="toggleMenu"class="fas fa-bars hamburger-sign"></i>
