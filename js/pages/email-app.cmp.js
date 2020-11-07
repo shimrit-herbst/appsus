@@ -52,15 +52,14 @@ export default {
     methods: {
         toggleNavFilter() {
             document.querySelector('.email-filter').style.display = 'flex'
-            console.log(document.querySelector('.email-filter').style);
-            // document.emailFilter.classList.toggle('display');
+                // document.emailFilter.classList.toggle('display');
         },
         onSearch() {
             eventBus.$emit('searchMails', this.searchTxt);
         },
         showDetails() {
             this.isShowList = false;
-            console.log('show details');
+            // console.log('show details');
         },
         composeMail() {
             this.$router.push('/email/compose')
@@ -113,7 +112,7 @@ export default {
     created() {
         eventBus.$on('showTrash', () => this.isShowDeleteBtn = true)
         eventBus.$on('filterMails', filter => {
-            console.log('filter', filter.fromTo)
+            // console.log('filter', filter.fromTo)
             this.isInboxFilter = (filter.fromTo === 'inbox')
         })
         eventBus.$on('showTrash', () => this.isInboxFilter = false)
@@ -126,7 +125,7 @@ export default {
             })
         eventBus.$on('selectedBtns', (diff) => {
             this.selectedCounter += diff;
-            console.log(this.selectedCounter, diff);
+            // console.log(this.selectedCounter, diff);
             this.toggleIsShowBtns()
         })
 

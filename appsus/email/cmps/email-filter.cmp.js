@@ -38,23 +38,28 @@ export default {
     methods: {
         filterByStatus(filter) {
             this.filterBy.status = filter
-            document.querySelector('.email-filter').style.display = 'none'
+            if ((document.querySelector('html').getBoundingClientRect().width) < 710) {
+                document.querySelector('.email-filter').style.display = 'none'
+            }
         },
         onShowMarked() {
-            console.log('show marked');
+            if ((document.querySelector('html').getBoundingClientRect().width) < 710) {
+                document.querySelector('.email-filter').style.display = 'none'
+            }
             eventBus.$emit('showMarked')
-            document.querySelector('.email-filter').style.display = 'none'
         },
         onFilterMails(filter) {
             this.filterBy.fromTo = filter
             eventBus.$emit('filterMails', this.filterBy)
-            document.querySelector('.email-filter').style.display = 'none'
-
+            if ((document.querySelector('html').getBoundingClientRect().width) < 710) {
+                document.querySelector('.email-filter').style.display = 'none'
+            }
         },
         onShowTrash() {
             eventBus.$emit('showTrash')
-            document.querySelector('.email-filter').style.display = 'none'
-
+            if ((document.querySelector('html').getBoundingClientRect().width) < 710) {
+                document.querySelector('.email-filter').style.display = 'none'
+            }
         },
         updateCounter() {
             console.log('updationg');

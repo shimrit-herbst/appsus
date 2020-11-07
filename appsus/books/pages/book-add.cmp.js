@@ -6,8 +6,13 @@ export default {
     name: 'book-add',
     template: `
     <section class="book-add container">
-        <h2 class="book-add-header">Add Books</h2>
-        <input type="text" v-model="bookSearch" placeholder="Add Book" @input="emitSearch"/>
+        <div class="add-book-header">
+            <div class="back-page">
+            <i @click="onBackPage" class="fas fa-arrow-alt-circle-left"><span> Go Back</span></i> 
+            </div> 
+            <h2>Add Books</h2> 
+        </div>
+        <input class="book-add-search" type="text" v-model="bookSearch" placeholder="Search a Book to add" @input="emitSearch"/>
         <hr/>
         <div class="book-list-container">
             <ul>
@@ -30,6 +35,9 @@ export default {
         bookPreview,
     },
     methods: {
+        onBackPage() {
+            this.$router.push('/book')
+        },
         emitSearch() {
             bookService.getBooksFromGoogle(this.bookSearch)
                 .then(res => this.showBooks = res)
@@ -42,7 +50,7 @@ export default {
         },
     },
     created() {
-        // bookService.getBooksFromGoogle()
-        //     .then(res => this.showBooks = res)
+        bookService.getBooksFromGoogle()
+            .then(res => this.showBooks = res)
     }
 }
