@@ -6,6 +6,12 @@ export default {
     name: 'email-list',
     template: `
     <section class="email-list" v-if="emails">
+        <p>
+        Display: {{filterBy.status}}
+        {{filterBy.fromTo}}
+        <span v-if="filterBy.isMarked">Marked</span>
+        <span v-if="filterBy.isTrash">Trash</span>
+        </p> 
         <ul class="email-list-container">
             <li v-for="email in getEmailsToShow" :key="email.id" >
                 <div class="list-fetures"> 
@@ -56,8 +62,10 @@ export default {
             console.log(this.filterBy);
         },
         onRemove(emailId) {
+            debugger
             console.log('remove to trash');
-            emailService.removeToTrash(emailId);
+            emailService.removeToTrash(emailId)
+                (eventBus.$emit('updateUnreadCounter'))
         },
         toggleRead(emailId, diff) {
             eventBus.$emit('updateUnread', diff)
@@ -80,8 +88,12 @@ export default {
         getEmailsToShow() {
             const searchTxt = this.filterBy.searchTxt.toLowerCase();
             var emailsToShow = JSON.parse(JSON.stringify(this.emails));
-            if (this.filterBy.isTrash) return emailsToShow.filter(email => email.isTrash)
+            if (this.filterBy.isTrash) {
+                this.filterBy.isMarked = false;
+                return emailsToShow.filter(email => email.isTrash)
+            }
             if (this.filterBy.isMarked) return emailsToShow.filter(email => email.isMarked)
+            if (this.filterBy.fromTo === 'sent') return emailsToShow.filter(email => email.to !== 'Me@gmail.com')
             emailsToShow = emailsToShow.filter(email => !email.isTrash)
             emailsToShow = emailsToShow.filter(email => email.subject.toLowerCase().includes(searchTxt) || email.body.toLowerCase().includes(searchTxt));
             if (this.filterBy.status !== 'All') {
@@ -108,8 +120,13 @@ export default {
         eventBus.$on('searchMails', searchTxt => this.filterBy.searchTxt = searchTxt);
         eventBus.$on('showTrash', () => {
             this.filterBy.isTrash = true;
+            this.filterBy.isMarked = false;
+            this.filterBy.fromTo = '';
+            this.filterBy.status = '';
         })
         eventBus.$on('showMarked', () => {
+
+            this.filterBy.isTrash = false
             this.filterBy.isMarked = true;
         })
 

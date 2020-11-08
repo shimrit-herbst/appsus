@@ -8,25 +8,25 @@ const EMAILS_KEY = 'mail';
 
 var gEmails = [{
         id: utilService.createId(),
-        from: 'APPSUS-COP@gmail.com',
+        from: 'Dominos Pizza',
         to: 'Me@gmail.com',
-        subject: 'Welcome to Appsus',
-        body: 'We are very hapy to see that you have joined us! With your new APPSUS app you can say goodbay to your Gmail and Notes because now you will have the best App for all of this!',
+        subject: 'Hot!!!!!',
+        body: 'Hungry? we have the best Pizza for you! dont get up from the couch, just go to www.pizza.com and our pizza will arive at 30 min max!',
         isRead: false,
-        sentAt: Date.now() - 2.5 * YEAR_IN_MS,
+        sentAt: Date.now(),
         isMarked: true,
         isTrash: false,
         isSelected: false,
     },
     {
         id: utilService.createId(),
-        from: 'Me@gmail.com',
-        to: 'Coding-Acadmi@hotmail.com',
-        subject: 'We gonna have a party!!!!!!',
-        body: 'Its an invetation to the biggest party ever! Come and join us to our brand new App release. Do not forget to and early up we are saving couple of drinks for you!',
+        from: 'D_trump@americaGotCrazy.com',
+        to: 'Me@gmail.com',
+        subject: 'Big Disappointment',
+        body: 'After 4 years of messing with your lovely country, its time for me to say goodbay. you probably thinking what am i going to do now? well its none of your f%^#%$ business! But i can only tell you thats its involve with some programing and the college Coding Acadmi',
         isRead: false,
-        sentAt: Date.now() - DAY_IN_MS * 3,
-        isMarked: false,
+        sentAt: Date.now() - 123213,
+        isMarked: true,
         isTrash: false,
         isSelected: false,
     },
@@ -44,16 +44,31 @@ var gEmails = [{
     },
     {
         id: utilService.createId(),
-        from: 'D_trump@americaGotCrazy.com',
-        to: 'Me@gmail.com',
-        subject: 'Big Disappointment',
-        body: 'After 4 years of messing with your lovely country, its time for me to say goodbay. you probably thinking what am i going to do now? well its none of your f%^#%$ business! But i can only tell you thats its involve with some programing and the college Coding Acadmi',
+        from: 'Me@gmail.com',
+        to: 'Coding-Acadmi@hotmail.com',
+        subject: 'We gonna have a party!!!!!!',
+        body: 'Its an invetation to the biggest party ever! Come and join us to our brand new App release. Do not forget to and early up we are saving couple of drinks for you!',
         isRead: false,
-        sentAt: Date.now(),
+        sentAt: Date.now() - DAY_IN_MS * 3,
+        isMarked: false,
+        isTrash: false,
+        isSelected: false,
+    },
+    {
+        id: utilService.createId(),
+        from: 'Google@gmail.com',
+        to: 'Me@gmail.com',
+        subject: 'Come work with us!',
+        body: 'We want you! We heard that you can help our program devleopers! We have the best enviorment and sallary in the market. for more deatails reply this mail with the word intrested! Hope to here from you! Google!',
+        isRead: false,
+        sentAt: Date.now() - 0.5 * DAY_IN_MS,
         isMarked: true,
         isTrash: false,
         isSelected: false,
     },
+
+
+
     {
         id: utilService.createId(),
         from: 'Me@gmail.com',
@@ -72,12 +87,50 @@ var gEmails = [{
         to: 'FaceBook@facebook.com',
         subject: 'STOP BUGGING ME!!!!!',
         body: 'Its been sooooo long since I have heard from you and frankly its soooo nice! goodbye!',
-        isRead: true,
+        isRead: false,
         sentAt: Date.now() - 2367821,
+        isMarked: false,
+        isTrash: false,
+        isSelected: false,
+    },
+    {
+        id: utilService.createId(),
+        from: 'Air B & B',
+        to: 'Me@gmail.com',
+        subject: 'Best Offer for you',
+        body: 'Herry up! for this weekend only the best prices you will find! Book in the next 2 hours and get another five percent discount!',
+        isRead: false,
+        sentAt: Date.now() - 10 * DAY_IN_MS,
+        isMarked: false,
+        isTrash: false,
+        isSelected: false,
+    },
+    {
+        id: utilService.createId(),
+        from: 'D_trump@americaGotCrazy.com',
+        to: 'Me@gmail.com',
+        subject: 'Me Again',
+        body: 'Lets make America great again!!!! They stole the election. We have to go to the streets and kick their nuts!!!!',
+        isRead: false,
+        sentAt: Date.now() - DAY_IN_MS,
+        isMarked: false,
+        isTrash: false,
+        isSelected: false,
+    },
+    {
+        id: utilService.createId(),
+        from: 'APPSUS-COP@gmail.com',
+        to: 'Me@gmail.com',
+        subject: 'Welcome to Appsus',
+        body: 'We are very hapy to see that you have joined us! With your new APPSUS app you can say goodbay to your Gmail and Notes because now you will have the best App for all of this!',
+        isRead: false,
+        sentAt: Date.now() - 2.5 * YEAR_IN_MS,
         isMarked: true,
         isTrash: false,
         isSelected: false,
     },
+
+
 ];
 
 loadEmails()
@@ -87,6 +140,7 @@ function loadEmails() {
 }
 
 function getEmails() {
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
     return Promise.resolve(gEmails)
 }
 
